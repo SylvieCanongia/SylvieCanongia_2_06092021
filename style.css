@@ -52,18 +52,6 @@ h2 {
   font-weight: 700;
 }
 
-h2 {
-  font-size: var(--medium);
-  margin-inline-end: var(--space-M);
-}
-
-p {
-  font-size: var(--medium);
-  padding-block-end: var(--space-S);
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
-
 /* --- HEADER --- */
 
 /* --- MAIN --- */
