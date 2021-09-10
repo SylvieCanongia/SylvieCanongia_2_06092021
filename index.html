@@ -74,38 +74,36 @@
         <div class="mainSearchGrid__wrapper">
           <!-- Search section -->
           <section class="mainSearchGrid__searchSection">
-            <article class="seachSection">
-              <div class="seachSection__Heading__wrapper">
-                <h2 class="searchSection__heading section__heading">
-                  Trouvez votre hébergement pour des vacances de rêve
-                </h2>
+            <div class="searchSection__Heading__wrapper">
+              <h2 class="searchSection__heading section__heading">
+                Trouvez votre hébergement pour des vacances de rêve
+              </h2>
+            </div>
+            <p class="searchSection_description">
+              En plein centre ville ou en pleine nature
+            </p>
+            <form role="search" class="searchSection__searchBar">
+              <div class="searchBar">
+                <i class="fas fa-map-marker-alt"></i>
+                <input
+                  type="text"
+                  class="searchBar_terms"
+                  id="searchBar"
+                  placeholder="Marseille, France"
+                  aria-label="Rechercher une ville"
+                />
+                <button type="submit" class="searchBar_button">
+                  <i class="fas fa-search"></i>
+                </button>
               </div>
-              <p class="searchSection_description">
-                En plein centre ville ou en pleine nature
-              </p>
-              <form role="search" class="searchSection__searchBar">
-                <div class="searchBar">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <input
-                    type="text"
-                    class="searchBar_terms"
-                    id="searchBar"
-                    termsholder="Marseille, France"
-                    aria-label="Rechercher une ville"
-                  />
-                  <button type="submit" class="searchBar_button">
-                    <i class="fas fa-search"></i>
-                  </button>
-                </div>
-              </form>
-            </article>
+            </form>
           </section>
           <!-- Filters section -->
 
           <section class="mainSearchGrid__filtersSection">
-            <article class="filtersSection">
-              <h2 class="filtersSection__heading">Filtres</h2>
-              <div class="filtersSection__filters__Wrapper">
+            <div class="filtersSection__filters">
+              <h2 class="filters__heading">Filtres</h2>
+              <div class="filters__Wrapper">
                 <div class="filter__label">
                   <i class="filter__icon fas fa-money-bill-wave"></i>
                   <p class="filter__keyword">Economique</p>
@@ -123,7 +121,7 @@
                   <p class="filter__keyword">Animaux autorisés</p>
                 </div>
               </div>
-            </article>
+            </div>
             <!-- Nb results -->
 
             <div class="filtersSection_nbResults">
@@ -139,7 +137,7 @@
         <div class="mainResultsGrid__wrapper">
           <!-- Most Popular section -->
 
-          <section class="mainResultsGrid__mostPopularSection">
+          <div class="mainResultsGrid__mostPopularSection">
             <article class="mostPopularSection__popularList">
               <div class="popularList__heading__Wrapper">
                 <h2 class="popularList__heading">Les plus populaires</h2>
@@ -190,12 +188,14 @@
                 </a>
               </div>
             </article>
-          </section>
+          </div>
 
           <!-- Results section -->
-          <section id="accommodations" class="mainResultsGrid__resultsSection">
+          <div id="accommodations" class="mainResultsGrid__resultsSection">
             <article class="resultsSection__resultsList">
-              <h2 class="resultsList__heading">Hébergements à Marseille</h2>
+              <div class="resultsList__heading__Wrapper">
+                <h2 class="resultsList__heading">Hébergements à Marseille</h2>
+              </div>
               <div class="resultsList__cards">
                 <a href="#">
                   <article class="resultsList__cardWrapper">
@@ -286,7 +286,7 @@
               </div>
               <div>Afficher plus</div>
             </article>
-          </section>
+          </div>
         </div>
 
         <!-- Activities Section -->

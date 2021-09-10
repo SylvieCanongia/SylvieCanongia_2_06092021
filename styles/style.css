@@ -101,7 +101,7 @@ h2 {
 /* Search section */
 
 /* Filters section */
-.filtersSection__filters__Wrapper {
+.filters__Wrapper {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
