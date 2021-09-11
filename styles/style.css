@@ -1,4 +1,9 @@
 :root {
+
+    /*  == PAGE WRAPPER == */
+
+    --maxWidthWrapper: 16px;
+
     /* == COLOR PALETTE == */
 
     /* Blue */
@@ -54,12 +59,12 @@
 
 * {
     box-sizing: border-box;
-    font-family: var(--font-family-base);
 }
 
 html,
 body {
     height: 100%;
+    font-family: var(--font-family-base);
 }
 
 html {
@@ -74,26 +79,75 @@ h2 {
     font-weight: var(--font-weight-bold);
 }
 
-.page-wrapper {
-    min-height: 100%;
-}
-
 /* ====================== */
 /* === MOBILE STYLES === */
 /* ====================== */
 
 /* === HEADER === */
 
+header {
+    font-size: var(--font-small);
+}
+
 .header__mainHeader {
     display: flex;
     justify-content: space-between;
     position: relative;
+    padding-block: var(--space-XS);
+    margin-inline: auto;
     max-width: min(100%, 1200px);
     /* max-width: min(100%, calc(1200px + 32px * 2)); */
 }
 
-.header__navbar .navbar__list {
-    display: flex;
+main {
+    padding-inline: var(--maxWidthWrapper);
+}
+
+.header__mainHeader {
+    margin-inline: var(--space-XS);
+}
+
+.mainHeader__logo {
+    display: grid;
+    place-items: center;
+    /* margin-inline-start: var(--space-XS); */
+}
+
+.mainHeader__signUp {
+    display: grid;
+    place-items: center;
+    font-weight: var(--font-weight-bold);
+}
+
+.mainHeader__signUp_link {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.header__navbar {
+    margin-block-start: var(--space-base);
+    margin-block-end: var(--space-XS);
+}
+
+.navbar__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: stretch;
+}
+
+.navbar__list_item a {
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    padding-block-end: calc(var(--space-base) * 1.2);
+    display: inline-block;
+    width: 100%;
+    border-bottom: 2px solid var(--grey-background);
+}
+
+.navbar__list_item a.--active {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
 }
 
 /* === MAIN === */
