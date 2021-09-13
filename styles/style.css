@@ -17,12 +17,12 @@
     --grey-light-border: hsl(0, 0%, 85%);
 
     /* == TYPOGRAPHY == */
-    --font-size-base: 1.125em;
+    --font-size-base: 1em;
 
-    --font-small: 0.8rem;
+    --font-small: 0.9rem;
     --font-normal: 1rem;
-    --font-medium: 1.25rem;
-    --font-large: 1.5rem;
+    --font-medium: 1.1rem;
+    --font-large: 1.4rem;
     --font-very-large: 2rem;
 
     /* == FONT WEIGHT == */
@@ -71,12 +71,27 @@ html {
     font-size: var(--font-size-base);
 }
 
+li a {
+    text-decoration: none;
+}
+
+/* p {
+    font-size: var(--font-small);
+} */
+
 /* --- GENERAL STYLES --- */
 
-h1,
-h2 {
+h2, h3 {
     color: var(--black);
     font-weight: var(--font-weight-bold);
+}
+
+h2 {
+    font-size: var(--font-large);
+}
+
+h3 {
+    font-size: var(--font-medium);
 }
 
 /* ====================== */
@@ -93,18 +108,10 @@ header {
     display: flex;
     justify-content: space-between;
     position: relative;
+    margin-inline: var(--space-XS);
     padding-block: var(--space-XS);
-    margin-inline: auto;
     max-width: min(100%, 1200px);
     /* max-width: min(100%, calc(1200px + 32px * 2)); */
-}
-
-main {
-    padding-inline: var(--maxWidthWrapper);
-}
-
-.header__mainHeader {
-    margin-inline: var(--space-XS);
 }
 
 .mainHeader__logo {
@@ -126,7 +133,7 @@ main {
 
 .header__navbar {
     margin-block-start: var(--space-base);
-    margin-block-end: var(--space-XS);
+    margin-block-end: var(--space-M);
 }
 
 .navbar__list {
@@ -151,6 +158,10 @@ main {
 }
 
 /* === MAIN === */
+
+main {
+    padding-inline: var(--maxWidthWrapper);
+}
 
 /* Search section */
 
