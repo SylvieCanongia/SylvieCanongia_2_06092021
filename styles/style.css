@@ -76,6 +76,19 @@ body {
     line-height: 1.2;
 }
 
+/* disable the instant scrolling for users you have configured
+their system/browser to reduce animations and movements,
+due to vestibular system disorders  */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+}
+
 a {
     text-decoration: none;
 }
@@ -176,7 +189,7 @@ header {
 
 /* Search section */
 
-.mainSearchGrid__wrapper {
+.mainSearchGrid {
     display: grid;
     grid-template-areas:
         "search-section"
@@ -202,7 +215,7 @@ header {
 
 .searchBar {
     display: grid;
-    grid-template-columns: var(--size-XL) 1fr var(--size-XL);
+    grid-template-columns: var(--size-XL) minmax(0, 1fr) var(--size-XL);
     height: var(--size-XL);
 }
 
@@ -224,16 +237,19 @@ header {
     background-color: var(--primary);
     border: none;
     border-radius: var(--radius-M);
+}
+
+.searchBar_button i {
     color: var(--white);
 }
 
 .searchBar input {
     border: 1px solid var(--grey-background);
-    margin-inline-end: calc((var(--size-M) + 2px) * -1);
+    margin-inline-end: -38px;
     border-radius: 0 var(--radius-M) var(--radius-M) 0;
     font-size: var(--font-medium);
     font-weight: var(--font-weight-bold);
-    padding-inline: var(--space-base);
+    padding-inline: var(--space-XS);
 }
 
 /* Filters section */
@@ -269,10 +285,10 @@ header {
     color: var(--primary);
     background-color: var(--secondary);
     display: grid;
-    place-items: center;
     /* shorthand for justify-items + align-items */
-    margin-inline-start: -2px;
+    place-items: center;
     /* covering the thickness of the gray border */
+    margin-inline-start: -2px;
     font-size: var(--font-medium);
 }
 
