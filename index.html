@@ -73,68 +73,68 @@
         <!-- Global grid for the 3 sections : Search, Filters and nb of results -->
         <div class="mainSearchGrid__wrapper">
           <div class="mainSearchGrid">
-          <!-- Search section -->
-          <section class="mainSearchGrid__searchSection">
-            <div class="searchSection__Heading__wrapper">
-              <h2 class="searchSection__heading section__heading">
-                Trouvez votre hébergement pour des vacances de rêve
-              </h2>
-            </div>
-            <p class="searchSection_description">
-              En plein centre ville ou en pleine nature
-            </p>
-            <form role="search" class="searchSection__searchBar">
-              <div class="searchBar">
-                <i class="fas fa-map-marker-alt"></i>
-                <input
-                  type="text"
-                  class="searchBar_terms"
-                  id="searchBar"
-                  placeholder="Marseille, France"
-                  aria-label="Rechercher une ville"
-                  value="Marseille, France"
-                />
-                <button type="submit" class="searchBar_button">
-                  <i class="fas fa-search"></i>
-                </button>
+            <!-- Search section -->
+            <section class="mainSearchGrid__searchSection">
+              <div class="searchSection__Heading__wrapper">
+                <h2 class="searchSection__heading section__heading">
+                  Trouvez votre hébergement pour des vacances de rêve
+                </h2>
               </div>
-            </form>
-          </section>
-          <!-- Filters section -->
+              <p class="searchSection_description">
+                En plein centre ville ou en pleine nature
+              </p>
+              <form role="search" class="searchSection__searchBar">
+                <div class="searchBar">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <input
+                    type="text"
+                    class="searchBar_terms"
+                    id="searchBar"
+                    placeholder="Marseille, France"
+                    aria-label="Rechercher une ville"
+                    value="Marseille, France"
+                  />
+                  <button type="submit" class="searchBar_button">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+            </section>
+            <!-- Filters section -->
 
-          <section class="mainSearchGrid__filtersSection">
-            <div class="filtersSection__filters">
-              <h3 class="filters__heading">Filtres</h3>
-              <div class="filters__Wrapper">
-                <div class="filter__label">
-                  <i class="filter__icon fas fa-money-bill-wave"></i>
-                  <p class="filter__keyword">Économique</p>
-                </div>
-                <div class="filter__label">
-                  <i class="filter__icon fas fa-child"></i>
-                  <div class="filter__keyword">Familial</div>
-                </div>
-                <div class="filter__label">
-                  <i class="filter__icon fas fa-heart"></i>
-                  <p class="filter__keyword">Romantique</p>
-                </div>
-                <div class="filter__label">
-                  <i class="filter__icon fas fa-dog"></i>
-                  <p class="filter__keyword">Animaux autorisés</p>
+            <section class="mainSearchGrid__filtersSection">
+              <div class="filtersSection__filters">
+                <h3 class="filters__heading">Filtres</h3>
+                <div class="filters__Wrapper">
+                  <div class="filter__label">
+                    <i class="filter__icon fas fa-money-bill-wave"></i>
+                    <p class="filter__keyword">Économique</p>
+                  </div>
+                  <div class="filter__label">
+                    <i class="filter__icon fas fa-child"></i>
+                    <div class="filter__keyword">Familial</div>
+                  </div>
+                  <div class="filter__label">
+                    <i class="filter__icon fas fa-heart"></i>
+                    <p class="filter__keyword">Romantique</p>
+                  </div>
+                  <div class="filter__label">
+                    <i class="filter__icon fas fa-dog"></i>
+                    <p class="filter__keyword">Animaux autorisés</p>
+                  </div>
                 </div>
               </div>
+              <!-- Nb results -->
+            </section>
+            <div class="mainSearchGrid_nbResults">
+              <div class="info__icon__wrapper">
+                <i class="info__icon fas fa-info"></i>
+              </div>
+              <p class="nb__results">
+                Plus de 500 logements sont disponibles dans cette ville
+              </p>
             </div>
-            <!-- Nb results -->
-          </section>
-          <div class="mainSearchGrid_nbResults">
-            <div class="info__icon__wrapper">
-              <i class="info__icon fas fa-info"></i>
-            </div>
-            <p class="nb__results">
-              Plus de 500 logements sont disponibles dans cette ville
-            </p>
           </div>
-        </div>
         </div>
 
         <!-- Global grid for the 2 sections : MostPopular and Results -->
@@ -194,7 +194,7 @@
                       <i aria-hidden="true" class="fas fa-star"></i>
                       <i aria-hidden="true" class="fas fa-star"></i>
                       <i aria-hidden="true" class="fas fa-star"></i>
-                      <i aria-hidden="true" class="fas fa-star lastRate"></i>
+                      <i aria-hidden="true" class="fas fa-star noStar"></i>
                     </div>
                   </article>
                 </a>
@@ -218,7 +218,7 @@
                       <i aria-hidden="true" class="fas fa-star"></i>
                       <i aria-hidden="true" class="fas fa-star"></i>
                       <i aria-hidden="true" class="fas fa-star"></i>
-                      <i aria-hidden="true" class="fas fa-star lastRate"></i>
+                      <i aria-hidden="true" class="fas fa-star noStar"></i>
                     </div>
                   </article>
                 </a>
@@ -244,7 +244,17 @@
                       Auberge la Cannebière
                     </h3>
                     <p class="resultsList__cardPrice">Nuit à partir de 25€</p>
-                    <div class="resultsList__cardRating">*****</div>
+                    <div
+                      class="resultsList__cardRating"
+                      role="img"
+                      aria-label="Rating"
+                    >
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star noStar"></i>
+                    </div>
                   </article>
                 </a>
                 <a href="#">
@@ -256,7 +266,17 @@
                     />
                     <h3 class="resultsList__cardHeading">Hôtel du port</h3>
                     <p class="resultsList__cardPrice">Nuit à partir de 52€</p>
-                    <div class="resultsList__cardRating">*****</div>
+                    <div
+                      class="resultsList__cardRating"
+                      role="img"
+                      aria-label="Rating"
+                    >
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                    </div>
                   </article>
                 </a>
                 <a href="#">
@@ -268,7 +288,17 @@
                     />
                     <h3 class="resultsList__cardHeading">Hôtel Les mouettes</h3>
                     <p class="resultsList__cardPrice">Nuit à partir de 76€</p>
-                    <div class="resultsList__cardRating">*****</div>
+                    <div
+                      class="resultsList__cardRating"
+                      role="img"
+                      aria-label="Rating"
+                    >
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star noStar"></i>
+                    </div>
                   </article>
                 </a>
                 <a href="#">
@@ -280,7 +310,17 @@
                     />
                     <h3 class="resultsList__cardHeading">Hôtel de la mer</h3>
                     <p class="resultsList__cardPrice">Nuit à partir de 46€</p>
-                    <div class="resultsList__cardRating">*****</div>
+                    <div
+                      class="resultsList__cardRating"
+                      role="img"
+                      aria-label="Rating"
+                    >
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star noStar"></i>
+                      <i aria-hidden="true" class="fas fa-star noStar"></i>
+                    </div>
                   </article>
                 </a>
                 <a href="#">
@@ -292,7 +332,17 @@
                     />
                     <h3 class="resultsList__cardHeading">Auberge Le Panier</h3>
                     <p class="resultsList__cardPrice">Nuit à partir de 23€</p>
-                    <div class="resultsList__cardRating">*****</div>
+                    <div
+                      class="resultsList__cardRating"
+                      role="img"
+                      aria-label="Rating"
+                    >
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star noStar"></i>
+                    </div>
                   </article>
                 </a>
                 <a href="#">
@@ -304,7 +354,17 @@
                     />
                     <h3 class="resultsList__cardHeading">Hôtel chez Amina</h3>
                     <p class="resultsList__cardPrice">Nuit à partir de 96€</p>
-                    <div class="resultsList__cardRating">*****</div>
+                    <div
+                      class="resultsList__cardRating"
+                      role="img"
+                      aria-label="Rating"
+                    >
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                    </div>
                   </article>
                 </a>
                 <a href="#">
@@ -316,11 +376,21 @@
                     />
                     <h3 class="resultsList__cardHeading">Hôtel Le Débord</h3>
                     <p class="resultsList__cardPrice">Nuit à partir de 55€</p>
-                    <div class="resultsList__cardRating">*****</div>
+                    <div
+                      class="resultsList__cardRating"
+                      role="img"
+                      aria-label="Rating"
+                    >
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star noStar"></i>
+                    </div>
                   </article>
                 </a>
               </div>
-              <div>Afficher plus</div>
+              <div class="displayMore">Afficher plus</div>
             </article>
           </div>
         </div>

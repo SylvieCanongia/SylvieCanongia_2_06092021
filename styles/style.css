@@ -83,7 +83,7 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
     html {
-      scroll-behavior: auto;
+        scroll-behavior: auto;
     }
 }
 
@@ -321,7 +321,6 @@ header {
     grid-template-areas:
         "mostPopular-section"
         "results-section";
-    gap: var(--space-M);
 }
 
 /* Most Popular Section */
@@ -330,15 +329,15 @@ header {
     grid-area: mostPopular-section;
     /* background of the entire section */
     background-color: var(--grey-background);
-    
+
 }
 
 .mostPopularSection__popularList {
-    padding-inline: var(--maxWidthWrapper);
-    padding-block: var(--space-L);
     display: flex;
     flex-direction: column;
     gap: var(--space-XS);
+    padding-inline: var(--maxWidthWrapper);
+    padding-block: var(--space-L);
 }
 
 .popularList__heading__Wrapper {
@@ -360,9 +359,9 @@ header {
 .popularList__cardWrapper {
     display: grid;
     grid-template-areas:
-        "image heading"
-        "image price"
-        "image rating";
+        'image heading'
+        'image price'
+        'image rating';
     grid-template-columns: 120px 1fr;
     grid-template-rows: 45px 30px 1fr;
     background-color: var(--white);
@@ -402,7 +401,7 @@ header {
     color: var(--grey-light-border);
 }
 
-.popularList__cardRating i:not(.lastRate) {
+.popularList__cardRating i:not(.noStar) {
     color: var(--primary);
 }
 
@@ -417,6 +416,85 @@ header {
 
 .mainResultsGrid__resultsSection {
     grid-area: results-section;
+}
+
+.resultsSection__resultsList {
+    padding-inline: var(--maxWidthWrapper);
+    padding-block: var(--space-L);
+}
+
+.resultsList__heading {
+    margin-block-end: var(--space-S);
+}
+
+.resultsList__cards {
+    display: grid;
+    gap: 16px;
+    /* fluid grid : min-width = 400px or 100% / max-width = 1fr */
+    grid-template-columns:
+        repeat(auto-fill,
+            minmax(min(400px, 100%), 1fr));
+}
+
+.resultsList__cardWrapper {
+    display: grid;
+    grid-template-areas:
+        'image'
+        'heading'
+        'price'
+        'rating';
+    grid-template-columns: 1fr;
+    grid-template-rows: 120px 24px 24px 20px;
+    background-color: var(--white);
+    border: 5px solid var(--white);
+    border-radius: var(--radius-L);
+    box-shadow: 1px 1px 10px 2px var(--grey-light-border);
+}
+
+.resultsList__cardImg {
+    display: block;
+    grid-area: image;
+    height: 110px;
+    object-fit: cover;
+    border-start-start-radius: var(--radius-L);
+    border-start-end-radius: var(--radius-L);
+}
+
+.resultsList__cardHeading {
+    grid-area: heading;
+    font-size: var(--font-normal);
+}
+
+.resultsList__cardPrice {
+    grid-area: price;
+    font-size: var(--font-small);
+}
+
+.resultsList__cardRating {
+    grid-area: rating;
+    font-size: calc(var(--font-normal) * 0.75);
+    padding-block-end: calc(var(--space-base) * 1.5);
+    letter-spacing: -1px;
+}
+
+.resultsList__cardRating i {
+    color: var(--grey-light-border);
+}
+
+.resultsList__cardRating i:not(.noStar) {
+    color: var(--primary);
+}
+
+.resultsList__cardHeading,
+.resultsList__cardPrice,
+.resultsList__cardRating {
+    padding-inline: var(--space-XS);
+}
+
+.displayMore {
+    font-size: var(--font-medium);
+    font-weight: var(--font-weight-bold);
+    margin-block-start: var(--space-L);
 }
 
 /* --- FOOTER --- */
