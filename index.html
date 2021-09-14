@@ -39,25 +39,25 @@
       <!-- ======= Header ======= -->
 
       <header class="header">
-          <div class="header__mainHeader">
-            <div class="mainHeader__logo">
-              <a href="#top" class="mainHeader__logo_link">
-                <img
-                  src="./images/logo/Reservia.svg"
-                  alt=""
-                  class="mainHeader__logo_image"
-                />
-              </a>
-            </div>
-            <div class="mainHeader__signUp">
-              <a href="#" class="mainHeader__signUp_link">S'inscrire</a>
-            </div>
+        <div class="header__mainHeader">
+          <div class="mainHeader__logo">
+            <a href="#top" class="mainHeader__logo_link">
+              <img
+                src="./images/logo/Reservia.svg"
+                alt=""
+                class="mainHeader__logo_image"
+              />
+            </a>
           </div>
+          <div class="mainHeader__signUp">
+            <a href="#" class="mainHeader__signUp_link">S'inscrire</a>
+          </div>
+        </div>
 
         <nav class="header__navbar">
           <ul class="navbar__list">
             <li class="navbar__list_item">
-                <a href="#accommodations" class="--active">Hébergements</a>
+              <a href="#accommodations" class="--active">Hébergements</a>
             </li>
             <li class="navbar__list_item">
               <a href="#activities">Activités</a>
@@ -125,15 +125,14 @@
             </div>
             <!-- Nb results -->
           </section>
-            <div class="mainSearchGrid_nbResults">
-              <div class="info__icon__wrapper">
-                <i class="info__icon fas fa-info"></i>
-              </div>
-              <p class="nb__results">
-                Plus de 500 logements sont disponibles dans cette ville
-              </p>
+          <div class="mainSearchGrid_nbResults">
+            <div class="info__icon__wrapper">
+              <i class="info__icon fas fa-info"></i>
             </div>
-          
+            <p class="nb__results">
+              Plus de 500 logements sont disponibles dans cette ville
+            </p>
+          </div>
         </div>
 
         <!-- Global grid for the 2 sections : MostPopular and Results -->
@@ -144,7 +143,9 @@
             <article class="mostPopularSection__popularList">
               <div class="popularList__heading__Wrapper">
                 <h2 class="popularList__heading">Les plus populaires</h2>
-                <i class="fas fa-chart-line"></i>
+                <div>
+                  <i class="fas fa-chart-line"></i>
+                </div>
               </div>
               <div class="popularList__cards">
                 <a href="#">
@@ -158,7 +159,17 @@
                       Hôtel Le soleil du matin
                     </h3>
                     <p class="popularList__cardPrice">Nuit à partir de 128€</p>
-                    <div class="popularList__cardRating">*****</div>
+                    <div
+                      class="popularList__cardRating"
+                      role="img"
+                      aria-label="Rating"
+                    >
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                    </div>
                   </article>
                 </a>
                 <a href="#">
@@ -172,7 +183,17 @@
                       Au coeur de l'eau Chambres d'hôtes
                     </h3>
                     <p class="popularList__cardPrice">Nuit à partir de 71€</p>
-                    <div class="popularList__cardRating">*****</div>
+                    <div
+                      class="popularList__cardRating"
+                      role="img"
+                      aria-label="Rating"
+                    >
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star lastRate"></i>
+                    </div>
                   </article>
                 </a>
                 <a href="#">
@@ -186,7 +207,17 @@
                       Hôtel Tout bleu et Blanc
                     </h3>
                     <p class="popularList__cardPrice">Nuit à partir de 68€</p>
-                    <div class="popularList__cardRating">*****</div>
+                    <div
+                      class="popularList__cardRating"
+                      role="img"
+                      aria-label="Rating"
+                    >
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star"></i>
+                      <i aria-hidden="true" class="fas fa-star lastRate"></i>
+                    </div>
                   </article>
                 </a>
               </div>

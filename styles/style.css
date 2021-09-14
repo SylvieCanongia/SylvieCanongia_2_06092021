@@ -1,8 +1,7 @@
 :root {
-
     /*  == PAGE WRAPPER == */
 
-    --maxWidthWrapper: 16px;
+    --maxWidthWrapper: var(--space-S);
     --maxWidth: min(100%, calc(1200px + 32px * 2));
 
     /* == COLOR PALETTE == */
@@ -60,11 +59,13 @@
     --radius-cercle: 50%;
     --radius-S: 5px;
     --radius-M: 16px;
+    --radius-L: 20px;
     --radius-XL: 30px;
 }
 
 * {
     box-sizing: border-box;
+    color: var(--black);
 }
 
 html,
@@ -75,7 +76,7 @@ body {
     line-height: 1.2;
 }
 
-li a {
+a {
     text-decoration: none;
 }
 
@@ -87,8 +88,8 @@ li a {
     margin-inline: auto;
 }
 
-h2, h3 {
-    color: var(--black);
+h2,
+h3 {
     font-weight: var(--font-weight-bold);
 }
 
@@ -119,8 +120,8 @@ header {
     display: flex;
     justify-content: space-between;
     position: relative;
-    margin-inline: var(--space-XS);
-    padding-block: var(--space-XS);
+    margin-inline: var(--space-S);
+    padding-block: var(--space-S);
     max-width: min(100%, 1200px);
 }
 
@@ -140,9 +141,9 @@ header {
     text-decoration: none;
 }
 
-.header__navbar {
+/* .header__navbar {
     margin-block-start: var(--space-base);
-}
+} */
 
 .navbar__list {
     display: grid;
@@ -167,33 +168,32 @@ header {
 
 /* === MAIN === */
 
-main {
+/* main {
     padding-inline: var(--maxWidthWrapper);
-}
+} */
+
+/* === SEARCH GRID === */
 
 /* Search section */
 
 .mainSearchGrid__wrapper {
     display: grid;
     grid-template-areas:
-        'search-section'
-        'filters-section'
-        'nb-results';
+        "search-section"
+        "filters-section"
+        "nb-results";
     gap: var(--space-M);
+    padding-inline: var(--maxWidthWrapper);
 }
 
 .mainSearchGrid__searchSection {
     grid-area: search-section;
 
     display: grid;
-    /* gap: 16px 0; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
 }
 
-.searchSection__Heading__wrapper {
-    margin-block-end: 16px;
+.searchSection__heading {
+    margin-block-end: var(--space-XS);
 }
 
 .searchSection_description {
@@ -211,10 +211,10 @@ main {
     display: grid;
     place-items: center;
     font-size: var(--font-medium);
-
 }
 
-.searchBar>i.fa-map-marker-alt{
+.searchBar i.fa-map-marker-alt {
+    height: calc(var(--size-XL) + 2px);
     background-color: var(--grey-background);
     border-radius: var(--radius-M) 0 0 var(--radius-M);
 }
@@ -260,8 +260,6 @@ main {
     border: 2px solid var(--grey-light-border);
     border-radius: var(--radius-XL);
     height: var(--size-XL);
-    /* margin-inline-end: var(--space-base); */
-    /* margin-block: var(--space-base); */
 }
 
 .filter__label .filter__icon {
@@ -271,15 +269,17 @@ main {
     color: var(--primary);
     background-color: var(--secondary);
     display: grid;
-    place-items: center; /* shorthand for justify-items + align-items */
-    margin-inline-start: -2px; /* covering the thickness of the gray border */
+    place-items: center;
+    /* shorthand for justify-items + align-items */
+    margin-inline-start: -2px;
+    /* covering the thickness of the gray border */
     font-size: var(--font-medium);
 }
 
 .filter__label .filter__keyword {
     font-weight: var(--font-weight-bold);
     font-size: var(--font-normal);
-    padding: var(--space-XS);
+    padding: calc(var(--space-XS) * 0.75);
 }
 
 /* Nb results */
@@ -308,10 +308,108 @@ main {
     font-size: var(--font-small);
 }
 
+/* === RESULTS GRID === */
+
+.mainResultsGrid__wrapper {
+    display: grid;
+    grid-template-areas:
+        "mostPopular-section"
+        "results-section";
+    gap: var(--space-M);
+}
+
 /* Most Popular Section */
+
+.mainResultsGrid__mostPopularSection {
+    grid-area: mostPopular-section;
+    background-color: var(--grey-background);
+    /* grey background of the most popular section */
+}
+
+.mostPopularSection__popularList {
+    padding-inline: var(--maxWidthWrapper);
+    padding-block: var(--space-L);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-XS);
+}
 
 .popularList__heading__Wrapper {
     display: flex;
+    justify-content: space-between;
+    font-size: var(--font-large);
+}
+
+.popularList__heading {
+    margin-block-end: var(--space-base);
+}
+
+.popularList__cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-XS);
+}
+
+.popularList__cardWrapper {
+    display: grid;
+    grid-template-areas:
+        "image heading"
+        "image price"
+        "image rating";
+    grid-template-columns: 120px 1fr;
+    grid-template-rows: 45px 30px 1fr;
+    background-color: var(--white);
+    border: 5px solid var(--white);
+    border-radius: var(--radius-L);
+    box-shadow: 1px 1px 10px 2px var(--grey-light-border);
+}
+
+.popularList__cardImg {
+    display: block;
+    grid-area: image;
+    height: 128px;
+    object-fit: cover;
+    border-start-start-radius: var(--radius-L);
+    border-end-start-radius: var(--radius-L);
+}
+
+.popularList__cardHeading {
+    grid-area: heading;
+    font-size: var(--font-normal);
+}
+
+.popularList__cardPrice {
+    grid-area: price;
+    font-size: var(--font-small);
+}
+
+.popularList__cardRating {
+    grid-area: rating;
+    align-self: end;
+    font-size: calc(var(--font-normal) * 0.75);
+    padding-block-end: calc(var(--space-base) * 1.5);
+    letter-spacing: -1px;
+}
+
+.popularList__cardRating i {
+    color: var(--grey-light-border);
+}
+
+.popularList__cardRating i:not(.lastRate) {
+    color: var(--primary);
+}
+
+.popularList__cardHeading,
+.popularList__cardPrice,
+.popularList__cardRating {
+    padding-inline: var(--space-S);
+    padding-block-start: calc(var(--space-base) * 1.5);
+}
+
+/* Results section */
+
+.mainResultsGrid__resultsSection {
+    grid-area: results-section;
 }
 
 /* --- FOOTER --- */
