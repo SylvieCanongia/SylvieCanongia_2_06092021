@@ -51,8 +51,6 @@
     --size-L: 40px;
     --size-XL: 48px;
 
-    /* == BORDERS == */
-    /* --border-gray-light: 2px solid var(--grey-light-border); */
 
     /* == RADIUS == */
 
@@ -154,10 +152,6 @@ header {
     text-decoration: none;
 }
 
-/* .header__navbar {
-    margin-block-start: var(--space-base);
-} */
-
 .navbar__list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -180,10 +174,6 @@ header {
 }
 
 /* === MAIN === */
-
-/* main {
-    padding-inline: var(--maxWidthWrapper);
-} */
 
 /* === SEARCH GRID === */
 
@@ -338,8 +328,9 @@ header {
 
 .mainResultsGrid__mostPopularSection {
     grid-area: mostPopular-section;
+    /* background of the entire section */
     background-color: var(--grey-background);
-    /* grey background of the most popular section */
+    
 }
 
 .mostPopularSection__popularList {
