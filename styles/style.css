@@ -430,7 +430,7 @@ header {
 .resultsList__cards {
     display: grid;
     gap: 16px;
-    /* fluid grid : min-width = 400px or 100% / max-width = 1fr */
+    /* fluid grid : min-width = 240px or 100% / max-width = 1fr */
     grid-template-columns:
         repeat(auto-fill,
             minmax(min(240px, 100%), 1fr));
@@ -511,11 +511,10 @@ header {
 .activitiesSection__activitiesList {
     display: grid;
     gap: 20px;
-    /* fluid grid : min-width = 400px or 100% / max-width = 1fr */
+    /* fluid grid : min-width = 230px or 100% / max-width = 1fr */
     grid-template-columns:
         repeat(auto-fill,
             minmax(min(230px, 100%), 1fr));
-    /* grid-template-rows: repeat(auto-fill, 128px); */
 }
 
 .activityItem__cardWrapper {
