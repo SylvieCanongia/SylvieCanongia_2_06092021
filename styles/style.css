@@ -1,7 +1,7 @@
 :root {
     /*  == PAGE WRAPPER == */
 
-    --maxWidthWrapper: var(--space-S);
+    --widthWrapper: var(--space-S);
     --maxWidth: min(100%, calc(1200px + 32px * 2));
 
     /* == COLOR PALETTE == */
@@ -59,6 +59,19 @@
     --radius-M: 16px;
     --radius-L: 18px;
     --radius-XL: 30px;
+
+    /* BREAKPOINTS */
+    --tabletMin: 550;
+    --laptopMin: 1100;
+    --desktopMin: 1500;
+
+
+    --tabletAndUp: (min-width: calc(var(--tabletMin) / 16) rem);
+    --laptopAndUp: (min-width: calc(var(--laptopMin) / 16) rem);
+    --desktopAndUp: (min-width: calc(var(--desktopMin) / 16) rem);
+    --tabletOnly: 
+        (min-width: calc(var(--tabletMin) / 16)rem) and
+        (max-width: calc((var(--laptopMin) - 1) / 16)rem);
 }
 
 * {
@@ -95,7 +108,7 @@ a {
 
 .page-wrapper {
     position: relative;
-    width: var(--maxWidth);
+    /* width: var(--maxWidth); */
     margin-inline: auto;
 }
 
@@ -186,7 +199,7 @@ header {
         "filters-section"
         "nb-results";
     gap: var(--space-M);
-    padding-inline: var(--maxWidthWrapper);
+    padding-inline: var(--widthWrapper);
 }
 
 .mainSearchGrid__searchSection {
@@ -336,7 +349,7 @@ header {
     display: flex;
     flex-direction: column;
     gap: var(--space-XS);
-    padding-inline: var(--maxWidthWrapper);
+    padding-inline: var(--widthWrapper);
     padding-block: var(--space-L);
 }
 
@@ -419,7 +432,7 @@ header {
 }
 
 .resultsSection__resultsList {
-    padding-inline: var(--maxWidthWrapper);
+    padding-inline: var(--widthWrapper);
     padding-block: var(--space-L);
 }
 
@@ -500,7 +513,7 @@ header {
 /* === ACTIVITIES GRID === */
 
 .activitiesSection {
-    padding-inline: var(--maxWidthWrapper);
+    padding-inline: var(--widthWrapper);
     padding-block-end: var(--space-L);
 }
 
@@ -548,6 +561,28 @@ header {
 }
 
 /* --- FOOTER --- */
+
+footer {
+    padding-block: var(--space-L);
+    background: var(--grey-background);
+}
+
+footer .footer__widthWrapper {
+    padding-inline: var(--widthWrapper);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-M);
+}
+
+.footer__navHeading {
+    margin-block-end: var(--space-XS);
+}
+
+.footer__navList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
 /* ====================== */
 /* === TABLET STYLES === */
