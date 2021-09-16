@@ -8,6 +8,7 @@
 
     /* Blue */
     --primary: hsl(216, 100%, 49%);
+    --primary-lighter: hsl(216, 100%, 69%);
     --secondary: hsl(214, 94%, 93%);
 
     /* Grays */
@@ -279,7 +280,35 @@ header {
     border: 2px solid var(--grey-light-border);
     border-radius: var(--radius-XL);
     height: var(--size-XL);
+    background: transparent;
+
+    transition: transform 250ms, background-color 50ms;
+    
 }
+
+/* Animation on filters */
+
+.transition__wrapper:hover .filter__label {
+    cursor: pointer;
+    
+    background: linear-gradient(135deg, var(--primary-lighter) 5%,var(--primary) 100%);
+    border: var(--primary-lighter);
+    transform: scale(1.03);
+}
+
+.transition__wrapper:hover .filter__keyword {
+    color: var(--white);
+}
+
+.transition__wrapper:hover .filter__icon {
+    background: var(--primary);
+}
+
+.transition__wrapper:hover .filter__icon:first-child {
+    color: var(--secondary);
+}
+
+/* End animation on filters */
 
 .filter__label .filter__icon {
     border-radius: var(--radius-cercle);
