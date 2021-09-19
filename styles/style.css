@@ -2,7 +2,7 @@
     /*  == PAGE WRAPPER == */
 
     --widthWrapper: var(--space-S);
-    --maxWidth: min(100%, calc(1200px + 32px * 2));
+    --maxWidth: min(100%, calc(1200px + 24px * 2));
 
     /* == COLOR PALETTE == */
 
@@ -16,6 +16,9 @@
     --white: hsl(0deg, 0%, 100%);
     --grey-background: hsl(0, 0%, 95%);
     --grey-light-border: hsl(0, 0%, 85%);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary-lighter) 5%, var(--primary) 100%);
 
     /* == TYPOGRAPHY == */
     --font-size-base: 1em;
@@ -62,17 +65,17 @@
     --radius-XL: 30px;
 
     /* BREAKPOINTS */
-    --tabletMin: 550;
-    --laptopMin: 1100;
-    --desktopMin: 1500;
+    /* --tabletMin: 550; */
+    /* --laptopMin: 1100; */
+    /* --desktopMin: 1500; */
 
 
-    --tabletAndUp: (min-width: calc(var(--tabletMin) / 16) rem);
-    --laptopAndUp: (min-width: calc(var(--laptopMin) / 16) rem);
-    --desktopAndUp: (min-width: calc(var(--desktopMin) / 16) rem);
-    --tabletOnly: 
+    /* --tabletAndUp: (min-width: calc(var(--tabletMin) / 16) rem); */
+    /* --laptopAndUp: (min-width: calc(var(--laptopMin) / 16) rem); */
+    /* --desktopAndUp: (min-width: calc(var(--desktopMin) / 16) rem); */
+    /* --tabletOnly: 
         (min-width: calc(var(--tabletMin) / 16)rem) and
-        (max-width: calc((var(--laptopMin) - 1) / 16)rem);
+        (max-width: calc((var(--laptopMin) - 1) / 16)rem); */
 }
 
 * {
@@ -109,7 +112,7 @@ a {
 
 .page-wrapper {
     position: relative;
-    /* width: var(--maxWidth); */
+    max-width: var(--maxWidth);
     margin-inline: auto;
 }
 
@@ -147,12 +150,15 @@ header {
     position: relative;
     margin-inline: var(--space-S);
     padding-block: var(--space-S);
-    max-width: min(100%, 1200px);
 }
 
 .mainHeader__logo {
     display: grid;
     place-items: center;
+}
+
+.mainheader__mainNavbar__wrapper {
+    display: none;
 }
 
 .mainHeader__signUp {
@@ -283,15 +289,15 @@ header {
     background: transparent;
 
     transition: transform 250ms, background-color 50ms;
-    
+
 }
 
 /* Animation on filters */
 
 .transition__wrapper:hover .filter__label {
     cursor: pointer;
-    
-    background: linear-gradient(135deg, var(--primary-lighter) 5%,var(--primary) 100%);
+
+    background: var(--gradient-primary);
     border: var(--primary-lighter);
     transform: scale(1.03);
 }
@@ -567,13 +573,11 @@ header {
     grid-template-columns: 1fr;
     grid-template-rows: 144px 44px;
     background-color: var(--white);
-    /* border: 5px solid var(--white); */
     border-radius: var(--radius-L);
     box-shadow: 1px 1px 8px 1px var(--grey-light-border);
 }
 
 .activityItem__cardImg {
-    /* display: block; */
     grid-area: image;
     height: 134px;
     object-fit: cover;
@@ -620,3 +624,70 @@ footer .footer__widthWrapper {
 /* ====================== */
 /* === DESKTOP STYLES === */
 /* ====================== */
+
+@media(min-width: 68.75rem) {
+    /* (1100px / 16) rem */
+
+    /* make the mobile and tablet navbar disappear */
+    .header__navbar,
+    .mainHeader__signUp {
+        display: none;
+    }
+
+    /* make desktop navbar visible */
+    .mainheader__mainNavbar__wrapper {
+        justify-self: end;
+        align-self: end;
+
+        display: grid;
+        place-items: center;
+    }
+
+    .mainHeader__logo {
+        justify-self: start;
+    }
+
+    /* To align logo with navbar horizontally */
+    .mainHeader__logo_image {
+        margin-block-end: -24px;
+    }
+
+    .header__mainHeader {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-block: 0;
+    }
+
+    .mainNavbar__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .mainNavbar__list_item a {
+        display: inline-block;
+        padding-block-start: var(--space-L);
+    }
+
+    .mainNavbar__list_item a {
+        padding-inline: var(--space-S);
+    }
+
+    .mainNavbar__list_item a.--active {
+        border-top: 2px solid var(--primary);
+        /* 2px less for the thickness of the blue border */
+        padding-block-start: calc(var(--space-L) - 2px);
+        color: var(--primary);
+    }
+
+    /* third item of the navbar for signing up */
+    .mainNavbar__list_item.signUp {
+        font-weight: var(--font-weight-bold);
+    }
+
+    .mainNavbar__list_item .signUpLink {
+        color: var(--primary);
+    }
+
+
+
+}
