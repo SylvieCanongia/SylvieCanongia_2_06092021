@@ -223,6 +223,12 @@ header {
     margin-block-end: 32px;
 }
 
+/* Searchbar */
+
+.searchSection__searchBar {
+    width: min(100%, 370px);
+}
+
 .searchBar {
     display: grid;
     grid-template-columns: var(--size-XL) minmax(0, 1fr) var(--size-XL);
@@ -315,6 +321,10 @@ header {
 }
 
 /* End animation on filters */
+
+.button__searchText {
+    display: none;
+}
 
 .filter__label .filter__icon {
     border-radius: var(--radius-cercle);
@@ -625,8 +635,10 @@ footer .footer__widthWrapper {
 /* === DESKTOP STYLES === */
 /* ====================== */
 
+/* (1100px / 16) rem */
 @media(min-width: 68.75rem) {
-    /* (1100px / 16) rem */
+    
+    /* === HEADER === */
 
     /* make the mobile and tablet navbar disappear */
     .header__navbar,
@@ -656,6 +668,8 @@ footer .footer__widthWrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding-block: 0;
+        /* increase the margin of the header wrapper*/
+        margin-inline: var(--space-M);
     }
 
     .mainNavbar__list {
@@ -686,8 +700,49 @@ footer .footer__widthWrapper {
 
     .mainNavbar__list_item .signUpLink {
         color: var(--primary);
+        padding-inline-end: 0;
     }
 
+    /* === MAIN === */
 
+    /* === SEARCH GRID === */
+
+    /* Search section */
+
+    .searchSection__searchBar {
+        width: min(100%, 330px);
+    }
+
+    /* Hide the icon "search" of the button */
+    .searchBar_button .button__searchIcon {
+        display: none;
+    }
+
+    .button__searchText {
+        display: inline-block;
+        color: var(--white);
+        font-size: var(--font-medium);
+        font-weight: var(--font-weight-bold);
+    }
+
+    .searchBar_button {
+        width: fit-content;
+        border-start-start-radius: 0;
+        border-end-start-radius: 0;
+        padding-inline: var(--space-XS);
+    }
+
+    /* filters section */
+
+    .filtersSection__filters {
+        display: flex;
+    }
+
+    .filters__heading {
+        display: grid;
+        align-items: center; 
+        margin-block-end: 0;
+        margin-inline-end: var(--space-M);
+    }
 
 }
