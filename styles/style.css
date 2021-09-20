@@ -2,7 +2,8 @@
     /*  == PAGE WRAPPER == */
 
     --widthWrapper: var(--space-S);
-    --maxWidth: min(100%, calc(1500px + 32px * 2));
+    /* --maxWidth: min(100%, calc(1500px + 32px * 2)); */
+    --maxWidth: 1500px;
 
     /* == COLOR PALETTE == */
 
@@ -490,7 +491,7 @@ header {
     /* fluid grid : min-width = 240px or 100% / max-width = 1fr */
     grid-template-columns:
         repeat(auto-fill,
-            minmax(min(250px, 100%), 1fr));
+            minmax(min(273px, 100%), 1fr));
 }
 
 .resultsList__cardWrapper {
@@ -571,7 +572,7 @@ header {
     /* fluid grid : min-width = 230px or 100% / max-width = 1fr */
     grid-template-columns:
         repeat(auto-fill,
-            minmax(min(250px, 100%), 1fr));
+            minmax(min(270px, 100%), 1fr));
 }
 
 .activityItem__cardWrapper {
@@ -765,6 +766,15 @@ footer .footer__widthWrapper {
         border-radius: var(--radius-L);
     }
 
+    .resultsList__cards {
+        display: grid;
+        gap: var(--space-XS);
+        /* fluid grid : min-width = 240px or 100% / max-width = 1fr */
+        grid-template-columns:
+            repeat(auto-fill,
+                minmax(min(265px, 100%), 1fr));
+    }
+
     .mainResultsGrid__mostPopularSection {
         border-radius: var(--radius-L);
     }
@@ -778,14 +788,48 @@ footer .footer__widthWrapper {
     .activitiesSection {
         padding-block-start: var(--space-XL)
     }
+
+    .activitiesSection__activitiesList {
+        gap: var(--space-M);
+        /* fluid grid : min-width = 230px or 100% / max-width = 1fr */
+        grid-template-columns:
+            repeat(auto-fill,
+                minmax(min(277px, 100%), 1fr));
+    }
 }
 
 /* from 1100 px to 1240px */
-@media(min-width: 68.75rem) and (max-width: 77.5rem) {
+@media(min-width: 68.75rem) and (max-width: 78.125rem) {
     /* === RESULTS GRID === */
 
     /* adjustment on most popular cards heading font-size */
     .mainResultsGrid__wrapper {
         grid-template-columns: 1.85fr 1.15fr;
     }
+}
+
+/* above 1250 px */
+@media (min-width: 78.125rem) {
+
+    /* Results section */
+
+    .resultsList__cards {
+        display: grid;
+        gap: var(--space-XS);
+        /* fluid grid : min-width = 240px or 100% / max-width = 1fr */
+        grid-template-columns:
+            repeat(auto-fill,
+                minmax(min(220px, 100%), 1fr));
+    }
+
+    /* Activities section */
+
+    .activitiesSection__activitiesList {
+        gap: var(--space-M);
+        /* fluid grid : min-width = 230px or 100% / max-width = 1fr */
+        grid-template-columns:
+            repeat(auto-fill,
+                minmax(min(265px, 100%), 1fr));
+    }
+
 }
