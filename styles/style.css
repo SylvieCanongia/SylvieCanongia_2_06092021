@@ -101,7 +101,7 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
     html {
-        scroll-behavior: auto;
+        scroll-behavior: smooth;
     }
 }
 
@@ -632,6 +632,25 @@ footer .footer__widthWrapper {
 
 /* === FOOTER === */
 
+/* 500px and above */
+@media(min-width: 31.25rem) {
+    footer .footer__widthWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* 900px and above */
+@media(min-width: 56.25rem) {
+    footer .footer__widthWrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+
+
 /* ====================== */
 /* === DESKTOP STYLES === */
 /* ====================== */
@@ -706,8 +725,9 @@ footer .footer__widthWrapper {
 
     /* === MAIN === */
 
-    main {
-        --widthWrapper: var(--space-M);
+    main,
+    footer {
+        --widthWrapper: var(--space-L);
     }
 
     /* === SEARCH GRID === */
@@ -756,9 +776,9 @@ footer .footer__widthWrapper {
         display: grid;
         grid-template-areas:
             'results-section mostPopular-section';
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1.8fr 1.2fr;
         gap: var(--space-S);
-        padding-inline: var(--space-M);
+        padding-inline: var(--space-L);
     }
 
     /* results section */
@@ -772,10 +792,10 @@ footer .footer__widthWrapper {
     .resultsList__cards {
         display: grid;
         gap: var(--space-XS);
-        /* fluid grid : min-width = 265px or 100% / max-width = 1fr */
+        /* fluid grid : min-width = 230px or 100% / max-width = 1fr */
         grid-template-columns:
             repeat(auto-fill,
-                minmax(min(265px, 100%), 1fr));
+                minmax(min(230px, 100%), 1fr));
     }
 
     .mainResultsGrid__mostPopularSection {
@@ -784,6 +804,16 @@ footer .footer__widthWrapper {
 
     .resultsList__cards {
         gap: var(--space-S);
+    }
+
+    /* Popular list section */
+
+    h3.popularList__cardHeading {
+        font-size: var(--font-small);
+    }
+
+    .popularList__cardPrice {
+        font-size: calc(var(--font-small) * 0.9);
     }
 
     /* Activities section */
@@ -799,31 +829,35 @@ footer .footer__widthWrapper {
             repeat(auto-fill,
                 minmax(min(277px, 100%), 1fr));
     }
-}
 
-/* from 1100 px to 1240px */
-@media(min-width: 68.75rem) and (max-width: 78.125rem) {
-    /* === RESULTS GRID === */
+    /* === FOOTER === */
 
-    /* adjustment on most popular cards heading font-size */
-    .mainResultsGrid__wrapper {
-        grid-template-columns: 1.85fr 1.15fr;
+    footer .footer__widthWrapper {
+        padding-inline: var(--widthWrapper);
     }
 }
 
-/* above 1250 px - to have */
+/* 1250 px and above */
 @media (min-width: 78.125rem) {
+
+    /* === RESULTS GRID === */
+
+    .mainResultsGrid__wrapper {
+        grid-template-columns: 1.9fr 1.1fr;
+    }
 
     /* Results section */
 
     .resultsList__cards {
         display: grid;
         gap: var(--space-XS);
-        /* fluid grid : min-width = 205px or 100% / max-width = 1fr */
+        /* fluid grid : min-width = 210px or 100% / max-width = 1fr */
         grid-template-columns:
             repeat(auto-fill,
-                minmax(min(215px, 100%), 1fr));
+                minmax(min(210px, 100%), 1fr));
     }
+
+
 
     /* Activities section */
 
@@ -834,5 +868,22 @@ footer .footer__widthWrapper {
             repeat(auto-fill,
                 minmax(min(265px, 100%), 1fr));
     }
+}
 
+/* 1350px and above */
+@media (min-width: 84.375rem) {
+
+    /* === RESULTS GRID === */
+
+    .mainResultsGrid__wrapper {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    h3.popularList__cardHeading {
+        font-size: var(--font-normal);
+    }
+
+    .popularList__cardPrice {
+        font-size: var(--font-small);
+    }
 }
