@@ -2,7 +2,7 @@
     /*  == PAGE WRAPPER == */
 
     --widthWrapper: var(--space-S);
-    --maxWidth: min(100%, calc(1200px + 24px * 2));
+    --maxWidth: min(100%, calc(1500px + 32px * 2));
 
     /* == COLOR PALETTE == */
 
@@ -387,7 +387,6 @@ header {
     grid-area: mostPopular-section;
     /* background of the entire section */
     background-color: var(--grey-background);
-
 }
 
 .mostPopularSection__popularList {
@@ -487,11 +486,11 @@ header {
 
 .resultsList__cards {
     display: grid;
-    gap: 16px;
+    gap: var(--space-XS);
     /* fluid grid : min-width = 240px or 100% / max-width = 1fr */
     grid-template-columns:
         repeat(auto-fill,
-            minmax(min(240px, 100%), 1fr));
+            minmax(min(250px, 100%), 1fr));
 }
 
 .resultsList__cardWrapper {
@@ -572,7 +571,7 @@ header {
     /* fluid grid : min-width = 230px or 100% / max-width = 1fr */
     grid-template-columns:
         repeat(auto-fill,
-            minmax(min(230px, 100%), 1fr));
+            minmax(min(250px, 100%), 1fr));
 }
 
 .activityItem__cardWrapper {
@@ -705,6 +704,10 @@ footer .footer__widthWrapper {
 
     /* === MAIN === */
 
+    main {
+        --widthWrapper: var(--space-M);
+    }
+
     /* === SEARCH GRID === */
 
     /* Search section */
@@ -745,4 +748,44 @@ footer .footer__widthWrapper {
         margin-inline-end: var(--space-M);
     }
 
+    /* === RESULTS GRID === */
+
+    .mainResultsGrid__wrapper {
+        display: grid;
+        grid-template-areas:
+            'results-section mostPopular-section';
+        grid-template-columns: 2fr 1fr;
+        gap: var(--space-S);
+        padding-inline: var(--space-M);
+    }
+
+    .mainResultsGrid__resultsSection {
+        /* background of the entire section */
+        background-color: var(--grey-background);
+        border-radius: var(--radius-L);
+    }
+
+    .mainResultsGrid__mostPopularSection {
+        border-radius: var(--radius-L);
+    }
+
+    .resultsList__cards {
+        gap: var(--space-S);
+    }
+
+    /* Activities section */
+
+    .activitiesSection {
+        padding-block-start: var(--space-XL)
+    }
+}
+
+/* from 1100 px to 1240px */
+@media(min-width: 68.75rem) and (max-width: 77.5rem) {
+    /* === RESULTS GRID === */
+
+    /* adjustment on most popular cards heading font-size */
+    .mainResultsGrid__wrapper {
+        grid-template-columns: 1.85fr 1.15fr;
+    }
 }
