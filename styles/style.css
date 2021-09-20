@@ -2,7 +2,8 @@
     /*  == PAGE WRAPPER == */
 
     --widthWrapper: var(--space-S);
-    --maxWidth: 1500px;
+    /* max-width 1500px */
+    --maxWidth: 93.75rem;
 
     /* == COLOR PALETTE == */
 
@@ -601,7 +602,7 @@ header {
     align-self: center;
 }
 
-/* --- FOOTER --- */
+/* === FOOTER === */
 
 footer {
     padding-block: var(--space-L);
@@ -628,6 +629,8 @@ footer .footer__widthWrapper {
 /* ====================== */
 /* === TABLET STYLES === */
 /* ====================== */
+
+/* === FOOTER === */
 
 /* ====================== */
 /* === DESKTOP STYLES === */
@@ -819,7 +822,7 @@ footer .footer__widthWrapper {
         /* fluid grid : min-width = 205px or 100% / max-width = 1fr */
         grid-template-columns:
             repeat(auto-fill,
-                minmax(min(205px, 100%), 1fr));
+                minmax(min(215px, 100%), 1fr));
     }
 
     /* Activities section */
