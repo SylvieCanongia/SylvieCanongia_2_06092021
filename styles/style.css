@@ -9,7 +9,8 @@
 
     /* Blue */
     --primary: hsl(216, 100%, 49%);
-    --primary-lighter: hsl(216, 100%, 69%);
+    --primary-icon: hsl(216, 100%, 60%);
+    --primary-lighter: hsl(216, 100%, 72%);
     --secondary: hsl(214, 94%, 93%);
 
     /* Grays */
@@ -19,7 +20,7 @@
     --grey-light-border: hsl(0, 0%, 85%);
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, var(--primary-lighter) 5%, var(--primary) 100%);
+    --gradient-primary: linear-gradient(135deg, var(--primary-lighter) 28%, var(--primary) 100%);
 
     /* == TYPOGRAPHY == */
     --font-size-base: 1em;
@@ -313,7 +314,7 @@ header {
 }
 
 .transition__wrapper:hover .filter__icon {
-    background: var(--primary);
+    background: var(--primary-icon);
 }
 
 .transition__wrapper:hover .filter__icon:first-child {
