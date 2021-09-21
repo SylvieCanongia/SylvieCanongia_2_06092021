@@ -857,9 +857,8 @@ footer .footer__widthWrapper {
         grid-template-columns:
             repeat(auto-fill,
                 minmax(min(220px, 100%), 1fr));
+        /* minmax(min(33.33fr, 100%), 1fr)); */
     }
-
-
 
     /* Activities section */
 
@@ -869,6 +868,86 @@ footer .footer__widthWrapper {
         grid-template-columns:
             repeat(auto-fill,
                 minmax(min(265px, 100%), 1fr));
+        /* minmax(min(0.25fr, 100%), 1fr)); */
+        grid-template-rows: 185px 32px 32px 155px;
+        row-gap: 0;
+    }
+
+    .activityItem__cardWrapper {
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 44px;
+    }
+
+    .activityItem__cardHeading {
+        padding-block: var(--space-base);
+    }
+
+    .activitiesList__activityItem {
+        height: 100%;
+    }
+
+    .activitiesList__activityItem.activity-1 {
+        grid-row: 1/ 5;
+        grid-column: 1/2;
+    }
+
+    .activity-1 .activityItem__cardImg {
+        /* 417px height - heading of 44px - 16px for a heading with padding = 357*/
+        height: 357px;
+    }
+
+    .activitiesList__activityItem.activity-2 {
+        grid-row: 1/ 3;
+        grid-column: 2/3;
+    }
+
+    .activity-2 .activityItem__cardImg {
+        /* 230px height - heading of 44px - 16px for a heading with padding = 170*/
+        height: 170px;
+    }
+
+    .activitiesList__activityItem.activity-3 {
+        grid-row: 4/5;
+        grid-column: 2/3;
+    }
+
+    .activity-3 .activityItem__cardImg {
+        /* 155px height - heading of 44px - 16px for a heading with padding = 95*/
+        /* +11px to adjust a different height from the other images */
+        height: 106px;
+    }
+
+    .activitiesList__activityItem.activity-4 {
+        grid-row: 1/ 5;
+        grid-column: 3/4;
+    }
+
+    .activity-4 .activityItem__cardImg {
+        /* 417px height - heading of 44px - 16px for a heading with padding = 357*/
+        height: 357px;
+    }
+
+    .activitiesList__activityItem.activity-5 {
+        grid-row: 1/ 2;
+        grid-column: 4/5;
+    }
+
+    .activity-5 .activityItem__cardImg {
+        /* 185px height - heading of 44px - 16px for a heading with padding = 125*/
+        /* +11px to adjust a different height from the other images */
+        height: 136px;
+    }
+
+    .activitiesList__activityItem.activity-6 {
+        grid-row: 3/ 5;
+        grid-column: 4/5;
+    }
+
+    .activity-6 .activityItem__cardImg {
+        /* 200px height - heading of 44px - 16px for a heading with padding = 140*/
+
+        height: 140px;
     }
 }
 
