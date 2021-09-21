@@ -1,11 +1,11 @@
 :root {
-    /*  == PAGE WRAPPER == */
+    /*  ====== PAGE WRAPPER ====== */
 
     --widthWrapper: var(--space-S);
     /* max-width 1500px */
     --maxWidth: 93.75rem;
 
-    /* == COLOR PALETTE == */
+    /* ====== COLOR PALETTE ====== */
 
     /* Blue */
     --primary: hsl(216, 100%, 49%);
@@ -22,34 +22,30 @@
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, var(--primary-lighter) 28%, var(--primary) 100%);
 
-    /* == TYPOGRAPHY == */
+    /* ====== TYPOGRAPHY ====== */
     --font-size-base: 1em;
 
     --font-small: 0.9rem;
     --font-normal: 1rem;
     --font-medium: 1.1rem;
     --font-large: 1.4rem;
-    --font-very-large: 2rem;
 
-    /* == FONT WEIGHT == */
+    /* ====== FONT WEIGHT ====== */
     --font-weight-normal: 700;
     --font-weight-bold: 900;
 
-    /* == FONT-FAMILY == */
+    /* ====== FONT-FAMILY ====== */
     --font-family-base: "Raleway", sans-serif;
 
-    /* == SPACING == */
+    /* ====== SPACING ====== */
     --space-base: 8px;
     --space-XS: 16px;
     --space-S: 24px;
     --space-M: 32px;
     --space-L: 40px;
     --space-XL: 48px;
-    --space-XXL: 64px;
-    --space-XXXL: 96px;
-    --space-4XL: 128px;
 
-    /* SIZES (HEIGHT, WIDTH) */
+    /* ====== SIZES (HEIGHT, WIDTH) ====== */
     --size-XXS: 8px;
     --size-XS: 16px;
     --size-S: 24px;
@@ -58,26 +54,13 @@
     --size-XL: 48px;
 
 
-    /* == RADIUS == */
+    /* ====== RADIUS ====== */
 
     --radius-cercle: 50%;
     --radius-S: 5px;
     --radius-M: 16px;
     --radius-L: 18px;
     --radius-XL: 30px;
-
-    /* BREAKPOINTS */
-    /* --tabletMin: 550; */
-    /* --laptopMin: 1100; */
-    /* --desktopMin: 1500; */
-
-
-    /* --tabletAndUp: (min-width: calc(var(--tabletMin) / 16) rem); */
-    /* --laptopAndUp: (min-width: calc(var(--laptopMin) / 16) rem); */
-    /* --desktopAndUp: (min-width: calc(var(--desktopMin) / 16) rem); */
-    /* --tabletOnly: 
-        (min-width: calc(var(--tabletMin) / 16)rem) and
-        (max-width: calc((var(--laptopMin) - 1) / 16)rem); */
 }
 
 * {
@@ -85,6 +68,10 @@
     color: var(--black);
 }
 
+/* =============================================================================== */
+/* ========================= */
+/* ===== GENERAL STYLES ===== */
+/* ========================= */
 html,
 body {
     height: 100%;
@@ -102,15 +89,13 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
     html {
-        scroll-behavior: smooth;
+        scroll-behavior: auto;
     }
 }
 
 a {
     text-decoration: none;
 }
-
-/* --- GENERAL STYLES --- */
 
 .page-wrapper {
     position: relative;
@@ -135,11 +120,13 @@ img {
     width: 100%;
 }
 
-/* ====================== */
-/* === MOBILE STYLES === */
-/* ====================== */
+/* =============================================================================== */
+/* ========================= */
+/* ===== MOBILE STYLES ===== */
+/* ========================= */
 
-/* === HEADER === */
+/* ====================== */
+/* ======= HEADER ======= */
 
 header {
     font-size: var(--font-small);
@@ -195,11 +182,13 @@ header {
     border-bottom: 2px solid var(--primary);
 }
 
-/* === MAIN === */
+/* ================================== */
+/* ============== MAIN ============== */
 
-/* === SEARCH GRID === */
 
-/* Search section */
+/* ========= SEARCH GRID ========= */
+
+/* --- Search section --- */
 
 .mainSearchGrid {
     display: grid;
@@ -270,7 +259,7 @@ header {
     padding-inline: var(--space-XS);
 }
 
-/* Filters section */
+/* --- Filters section --- */
 
 .mainSearchGrid__filtersSection {
     grid-area: filters-section;
@@ -347,7 +336,7 @@ header {
     padding: calc(var(--space-XS) * 0.75);
 }
 
-/* Nb results */
+/* --- Nb results section--- */
 
 .mainSearchGrid_nbResults {
     grid-area: nb-results;
@@ -373,7 +362,7 @@ header {
     font-size: var(--font-small);
 }
 
-/* === RESULTS GRID === */
+/* ============= RESULTS GRID ============= */
 
 .mainResultsGrid__wrapper {
     display: grid;
@@ -382,7 +371,7 @@ header {
         "results-section";
 }
 
-/* Most Popular Section */
+/* --- Most Popular Section --- */
 
 .mainResultsGrid__mostPopularSection {
     grid-area: mostPopular-section;
@@ -470,7 +459,7 @@ header {
     padding-block-start: calc(var(--space-base) * 1.5);
 }
 
-/* Results section */
+/* --- Results section --- */
 
 .mainResultsGrid__resultsSection {
     grid-area: results-section;
@@ -555,7 +544,7 @@ header {
     margin-block-start: var(--space-L);
 }
 
-/* === ACTIVITIES GRID === */
+/* =========== ACTIVITIES GRID =========== */
 
 .activitiesSection {
     padding-inline: var(--widthWrapper);
@@ -603,7 +592,7 @@ header {
     align-self: center;
 }
 
-/* === FOOTER === */
+/* ============== FOOTER ============== */
 
 footer {
     padding-block: var(--space-L);
@@ -627,39 +616,97 @@ footer .footer__widthWrapper {
     gap: 8px;
 }
 
-/* ====================== */
-/* === TABLET STYLES === */
-/* ====================== */
+/* ================================================================================== */
+/* -****** styles for mobile under 370px ******- */
+@media (max-width: 23.12rem) {
 
-/* === FOOTER === */
+    /* ====================== */
+    /* ======== MAIN ======== */
 
-/* 500px and above */
+    /* ==== RESULTS GRID ==== */
+
+    /* --- Most popular section --- */
+    .popularList__cardHeading {
+        font-size: var(--font-small);
+    }
+}
+
+/* =================================================================================== */
+
+/* ============================= */
+/* ======= TABLET STYLES ======= */
+/* ============================= */
+
+/* -****** 500px and above ******- */
 @media(min-width: 31.25rem) {
+
+    /* === FOOTER === */
     footer .footer__widthWrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 }
 
-/* 900px and above */
+/* -****** media between 500px and 799.8px ******- */
+@media(min-width: 31.25rem) and (max-width: 49.99rem) {
+
+    /* ================ */
+    /* ===== MAIN ===== */
+
+    /* Most popular section */
+
+    .popularList__cardWrapper {
+        grid-template-columns: 200px 1fr;
+    }
+
+    .popularList__cardHeading,
+    .popularList__cardPrice,
+    .popularList__cardRating {
+        padding-inline: var(--space-L);
+    }
+}
+
+/* -****** media between 800px and 1099.8px ******- */
+@media(min-width: 50rem) and (max-width: 68.74rem) {
+
+    /* ================ */
+    /* ===== MAIN ===== */
+
+    /* --- Most popular section --- */
+
+    .popularList__cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .popularList__cardWrapper {
+        grid-template-columns: 160px 1fr;
+    }
+}
+
+/* -****** 900px and above ******- */
 @media(min-width: 56.25rem) {
+
+    /* ================ */
+    /* ==== FOOTER ==== */
+
     footer .footer__widthWrapper {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-
     }
 }
 
 
-
+/* =================================================================================== */
 /* ====================== */
 /* === DESKTOP STYLES === */
 /* ====================== */
 
-/* (1100px / 16) rem */
+/* -****** media 1100px and above ******- */
 @media(min-width: 68.75rem) {
 
-    /* === HEADER === */
+    /* ================ */
+    /* ==== HEADER ==== */
 
     /* make the mobile and tablet navbar disappear */
     .header__navbar,
@@ -724,16 +771,17 @@ footer .footer__widthWrapper {
         padding-inline-end: 0;
     }
 
-    /* === MAIN === */
+    /* ========================== */
+    /* ========== MAIN ========== */
 
     main,
     footer {
         --widthWrapper: var(--space-L);
     }
 
-    /* === SEARCH GRID === */
+    /* ========== SEARCH GRID ========== */
 
-    /* Search section */
+    /* --- Search section --- */
 
     .searchSection__searchBar {
         width: min(100%, 330px);
@@ -758,7 +806,7 @@ footer .footer__widthWrapper {
         padding-inline: var(--space-XS);
     }
 
-    /* filters section */
+    /* --- filters section --- */
 
     .filtersSection__filters {
         display: flex;
@@ -771,7 +819,7 @@ footer .footer__widthWrapper {
         margin-inline-end: var(--space-M);
     }
 
-    /* === RESULTS GRID === */
+    /* =========== RESULTS GRID =========== */
 
     .mainResultsGrid__wrapper {
         display: grid;
@@ -782,7 +830,7 @@ footer .footer__widthWrapper {
         padding-inline: var(--space-L);
     }
 
-    /* results section */
+    /* --- results section --- */
 
     .mainResultsGrid__resultsSection {
         /* background of the entire section */
@@ -807,7 +855,7 @@ footer .footer__widthWrapper {
         gap: var(--space-S);
     }
 
-    /* Popular list section */
+    /* --- Popular list section --- */
 
     h3.popularList__cardHeading {
         font-size: var(--font-small);
@@ -818,7 +866,7 @@ footer .footer__widthWrapper {
         padding-block-start: var(--space-base);
     }
 
-    /* Activities section */
+    /* --- Activities section --- */
 
     .activitiesSection {
         padding-block-start: var(--space-XL)
@@ -827,7 +875,7 @@ footer .footer__widthWrapper {
     .activitiesSection__activitiesList {
         gap: var(--space-M);
         row-gap: 0;
-        /* fluid grid : min-width = 277px or 100% / max-width = 1fr */
+        /* fluid grid : min-width = 230px or 100% / max-width = 1fr */
         grid-template-columns:
             repeat(auto-fill,
                 minmax(min(230px, 100%), 1fr));
@@ -906,33 +954,30 @@ footer .footer__widthWrapper {
     }
 
     .activity-6 .activityItem__cardImg {
-        /* 200px height - heading of 44px - 16px for a heading with padding = 140*/
-
+        /* 200px height - heading of 44px - 16px for a heading with padding = 140 */
         height: 140px;
     }
 
-
-
-
-
-
-    /* === FOOTER === */
+    /* ================================ */
+    /* ============ FOOTER ============ */
 
     footer .footer__widthWrapper {
         padding-inline: var(--widthWrapper);
     }
 }
 
-/* 1250 px and above */
+/* ========================================================================================== */
+
+/* -****** 1250 px and above ******- */
 @media (min-width: 78.125rem) {
 
-    /* === RESULTS GRID === */
+    /* ============ RESULTS GRID ============ */
 
     .mainResultsGrid__wrapper {
         grid-template-columns: 1.9fr 1.1fr;
     }
 
-    /* Results section */
+    /* --- Results section --- */
 
     .resultsList__cards {
         display: grid;
@@ -941,10 +986,9 @@ footer .footer__widthWrapper {
         grid-template-columns:
             repeat(auto-fill,
                 minmax(min(220px, 100%), 1fr));
-        /* minmax(min(33.33fr, 100%), 1fr)); */
     }
 
-    /* Activities section */
+    /* --- Activities section --- */
 
     .activitiesSection__activitiesList {
         gap: var(--space-M);
@@ -952,18 +996,17 @@ footer .footer__widthWrapper {
         grid-template-columns:
             repeat(auto-fill,
                 minmax(min(265px, 100%), 1fr));
-        /* minmax(min(0.25fr, 100%), 1fr)); */
         grid-template-rows: 185px 32px 32px 155px;
         row-gap: 0;
     }
-
-   
 }
 
-/* 1350px and above */
+/* =========================================================================================== */
+
+/* -****** 1350px and above ******- */
 @media (min-width: 84.375rem) {
 
-    /* === RESULTS GRID === */
+    /* ============ RESULTS GRID ============ */
 
     .mainResultsGrid__wrapper {
         grid-template-columns: 2fr 1fr;
