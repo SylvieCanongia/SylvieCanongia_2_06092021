@@ -814,6 +814,7 @@ footer .footer__widthWrapper {
 
     .popularList__cardPrice {
         font-size: calc(var(--font-small) * 0.9);
+        padding-block-start: var(--space-base);
     }
 
     /* Activities section */
@@ -851,10 +852,10 @@ footer .footer__widthWrapper {
     .resultsList__cards {
         display: grid;
         gap: var(--space-XS);
-        /* fluid grid : min-width = 210px or 100% / max-width = 1fr */
+        /* fluid grid : min-width = 220px or 100% / max-width = 1fr */
         grid-template-columns:
             repeat(auto-fill,
-                minmax(min(210px, 100%), 1fr));
+                minmax(min(220px, 100%), 1fr));
     }
 
 
