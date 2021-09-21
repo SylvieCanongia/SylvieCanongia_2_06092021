@@ -826,51 +826,12 @@ footer .footer__widthWrapper {
 
     .activitiesSection__activitiesList {
         gap: var(--space-M);
+        row-gap: 0;
         /* fluid grid : min-width = 277px or 100% / max-width = 1fr */
         grid-template-columns:
             repeat(auto-fill,
-                minmax(min(277px, 100%), 1fr));
-    }
-
-    /* === FOOTER === */
-
-    footer .footer__widthWrapper {
-        padding-inline: var(--widthWrapper);
-    }
-}
-
-/* 1250 px and above */
-@media (min-width: 78.125rem) {
-
-    /* === RESULTS GRID === */
-
-    .mainResultsGrid__wrapper {
-        grid-template-columns: 1.9fr 1.1fr;
-    }
-
-    /* Results section */
-
-    .resultsList__cards {
-        display: grid;
-        gap: var(--space-XS);
-        /* fluid grid : min-width = 220px or 100% / max-width = 1fr */
-        grid-template-columns:
-            repeat(auto-fill,
-                minmax(min(220px, 100%), 1fr));
-        /* minmax(min(33.33fr, 100%), 1fr)); */
-    }
-
-    /* Activities section */
-
-    .activitiesSection__activitiesList {
-        gap: var(--space-M);
-        /* fluid grid : min-width = 265px or 100% / max-width = 1fr */
-        grid-template-columns:
-            repeat(auto-fill,
-                minmax(min(265px, 100%), 1fr));
-        /* minmax(min(0.25fr, 100%), 1fr)); */
+                minmax(min(230px, 100%), 1fr));
         grid-template-rows: 185px 32px 32px 155px;
-        row-gap: 0;
     }
 
     .activityItem__cardWrapper {
@@ -949,6 +910,54 @@ footer .footer__widthWrapper {
 
         height: 140px;
     }
+
+
+
+
+
+
+    /* === FOOTER === */
+
+    footer .footer__widthWrapper {
+        padding-inline: var(--widthWrapper);
+    }
+}
+
+/* 1250 px and above */
+@media (min-width: 78.125rem) {
+
+    /* === RESULTS GRID === */
+
+    .mainResultsGrid__wrapper {
+        grid-template-columns: 1.9fr 1.1fr;
+    }
+
+    /* Results section */
+
+    .resultsList__cards {
+        display: grid;
+        gap: var(--space-XS);
+        /* fluid grid : min-width = 220px or 100% / max-width = 1fr */
+        grid-template-columns:
+            repeat(auto-fill,
+                minmax(min(220px, 100%), 1fr));
+        /* minmax(min(33.33fr, 100%), 1fr)); */
+    }
+
+    /* Activities section */
+
+    .activitiesSection__activitiesList {
+        gap: var(--space-M);
+        /* fluid grid : min-width = 265px or 100% / max-width = 1fr */
+        grid-template-columns:
+            repeat(auto-fill,
+                minmax(min(265px, 100%), 1fr));
+        /* minmax(min(0.25fr, 100%), 1fr)); */
+        grid-template-rows: 185px 32px 32px 155px;
+        row-gap: 0;
+    }
+
+   
 }
 
 /* 1350px and above */
