@@ -177,7 +177,7 @@ header {
     border-bottom: 2px solid var(--grey-background);
 }
 
-.navbar__list_item a.--active {
+.navbar__list_item a.active {
     color: var(--primary);
     border-bottom: 2px solid var(--primary);
 }
@@ -309,7 +309,6 @@ header {
 .transition__wrapper:hover .filter__icon:first-child {
     color: var(--secondary);
 }
-
 /* End animation on filters */
 
 .button__searchText {
@@ -668,10 +667,10 @@ footer .footer__widthWrapper {
 
 /* -****** media between 800px and 1099.8px ******- */
 @media(min-width: 50rem) and (max-width: 68.74rem) {
-
+    
     /* ================ */
     /* ===== MAIN ===== */
-
+    
     /* --- Most popular section --- */
 
     .popularList__cards {
@@ -686,7 +685,7 @@ footer .footer__widthWrapper {
 
 /* -****** 900px and above ******- */
 @media(min-width: 56.25rem) {
-
+    
     /* ================ */
     /* ==== FOOTER ==== */
 
@@ -754,7 +753,7 @@ footer .footer__widthWrapper {
         padding-inline: var(--space-S);
     }
 
-    .mainNavbar__list_item a.--active {
+    .mainNavbar__list_item a.active {
         border-top: 2px solid var(--primary);
         /* 2px less for the thickness of the blue border */
         padding-block-start: calc(var(--space-L) - 2px);
