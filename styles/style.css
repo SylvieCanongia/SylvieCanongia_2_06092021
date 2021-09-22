@@ -10,6 +10,7 @@
     /* Blue */
     --primary: hsl(216, 100%, 49%);
     --primary-lighter: hsl(216, 100%, 72%);
+    --primary-darker: hsl(216, 100%, 32%);
     --primary-icon: hsl(36, 100%, 65%);
     --primary-icon-lighter: hsl(36, 100%, 88%);
     --primary-icon-darker: hsl(36, 100%, 59%);
@@ -20,6 +21,8 @@
     /* Grays */
     --black: hsl(0deg, 0%, 0%);
     --white: hsl(0deg, 0%, 100%);
+    --white-transparent-light: hsla(0deg, 0%, 100%, 0.8);
+    --white-transparent-dark: hsla(0deg, 0%, 100%, 0.2);
     --grey-background: hsl(0, 0%, 95%);
     --grey-light-border: hsl(0, 0%, 85%);
 
@@ -259,6 +262,15 @@ header {
 
 .searchBar_button i {
     color: var(--white);
+}
+
+.searchBar_button:hover {
+    background-color: var(--primary-darker);
+    border: 1px solid rgba(hsl(0, 0%, 0%), .05);
+    box-shadow: 1px 1px 2px rgba(#fff, .2);
+    color: var(--white-transparent-light);
+    text-shadow: -1px -1px 0 var(--white-transparent-dark);
+    transition: all 250ms linear;
 }
 
 .searchBar input {
