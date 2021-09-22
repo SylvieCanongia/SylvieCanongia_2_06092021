@@ -9,9 +9,13 @@
 
     /* Blue */
     --primary: hsl(216, 100%, 49%);
-    --primary-icon: hsl(216, 100%, 60%);
     --primary-lighter: hsl(216, 100%, 72%);
+    --primary-icon: hsl(36, 100%, 65%);
+    --primary-icon-lighter: hsl(36, 100%, 88%);
+    --primary-icon-darker: hsl(36, 100%, 59%);
+    --primary-icon-dark: hsl(36, 100%, 35%);
     --secondary: hsl(214, 94%, 93%);
+    --secondary-light: hsl(214, 94%, 97%);
 
     /* Grays */
     --black: hsl(0deg, 0%, 0%);
@@ -20,7 +24,8 @@
     --grey-light-border: hsl(0, 0%, 85%);
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, var(--primary-lighter) 28%, var(--primary) 100%);
+    --gradient-primary: linear-gradient(135deg, var(--primary-icon-lighter) 15%, var(--primary-icon-darker) 100%);
+
 
     /* ====== TYPOGRAPHY ====== */
     --font-size-base: 1em;
@@ -95,6 +100,11 @@ html {
 
 a {
     text-decoration: none;
+}
+
+li a:hover {
+    color: var(--primary);
+    text-decoration: underline var(--primary);
 }
 
 .page-wrapper {
@@ -244,6 +254,7 @@ header {
     background-color: var(--primary);
     border: none;
     border-radius: var(--radius-M);
+    cursor: pointer;
 }
 
 .searchBar_button i {
@@ -251,12 +262,22 @@ header {
 }
 
 .searchBar input {
+    /* to avoid the border stretches and overflow when clicked */
+    box-sizing: border-box;
     border: 1px solid var(--grey-background);
     margin-inline-end: -38px;
     border-radius: 0 var(--radius-M) var(--radius-M) 0;
     font-size: var(--font-medium);
     font-weight: var(--font-weight-bold);
     padding-inline: var(--space-XS);
+}
+
+.searchBar input:focus {
+    outline: none;
+}
+
+.searchBar input:focus {
+    border: 1px solid var(--primary);
 }
 
 /* --- Filters section --- */
@@ -285,7 +306,7 @@ header {
     height: var(--size-XL);
     background: transparent;
 
-    transition: transform 250ms, background-color 50ms;
+    transition: background-color 150ms, border-color 150ms;
 }
 
 /* Animation on filters */
@@ -294,21 +315,25 @@ header {
     cursor: pointer;
 
     background: var(--gradient-primary);
-    border: var(--primary-lighter);
-    transform: scale(1.03);
+    border-color: var(--primary-icon);
 }
 
-.transition__wrapper:hover .filter__keyword {
-    color: var(--white);
+.filter__icon {
+    transition: background-color 150ms;
 }
 
 .transition__wrapper:hover .filter__icon {
     background: var(--primary-icon);
 }
 
-.transition__wrapper:hover .filter__icon:first-child {
-    color: var(--secondary);
+.filter__icon:first-child {
+    transition: transform 800ms;
 }
+
+.transition__wrapper:hover .filter__icon:first-child {
+    transform: rotate(1turn);
+}
+
 /* End animation on filters */
 
 .button__searchText {
@@ -416,13 +441,31 @@ header {
     box-shadow: 1px 1px 10px 2px var(--grey-light-border);
 }
 
+/* Animation on popular list cards */
+.popularList__cardWrapper {
+    transition: background-color 350ms, border-color 350ms;
+}
+
+.popularList__cardWrapper__container:hover .popularList__cardWrapper {
+    background: var(--primary-icon-lighter);
+    border-color: var(--primary-icon);
+}
+
+.popularList__cardWrapper__container {
+    border-radius: var(--radius-L);
+    overflow: hidden;
+}
+
+/* End animation on popular list cards */
+
 .popularList__cardImg {
     display: block;
     grid-area: image;
     height: 128px;
     object-fit: cover;
-    border-start-start-radius: var(--radius-L);
-    border-end-start-radius: var(--radius-L);
+    /* smaller radius than the border to avoid white space between img and border */
+    border-start-start-radius: calc(var(--radius-L) * 0.7);
+    border-end-start-radius: calc(var(--radius-L) * 0.7);
 }
 
 .popularList__cardHeading {
@@ -459,6 +502,38 @@ header {
 }
 
 /* --- Results section --- */
+
+/* Animation on results list cards */
+.resultsList__cardWrapper {
+    transition: background-color 350ms, border-color 350ms;
+}
+
+.resultsList__cardWrapper__container {
+    border-radius: var(--radius-L);
+    overflow: hidden;
+}
+
+.resultsList__cardWrapper__container:hover .resultsList__cardWrapper {
+    background-color: var(--primary-icon-lighter);
+    border-color: var(--primary-icon);
+}
+
+.resultsList__cardImg {
+    transition: transform 500ms;
+}
+
+.resultsList__cardImg__container {
+    overflow: hidden;
+    /* radius a bit smaller than the border to avoid white space between img and border */
+    border-start-start-radius: calc(var(--radius-L) * 0.7);
+    border-start-end-radius: calc(var(--radius-L) * 0.7);
+}
+
+.resultsList__cardImg__container:hover .resultsList__cardImg {
+    transform: scale(1.04);
+}
+
+/* End animation on results list cards */
 
 .mainResultsGrid__resultsSection {
     grid-area: results-section;
@@ -502,8 +577,9 @@ header {
     grid-area: image;
     height: 110px;
     object-fit: cover;
-    border-start-start-radius: var(--radius-L);
-    border-start-end-radius: var(--radius-L);
+    /* radius a bit smaller than the border to avoid white space between img and border on hovering */
+    border-start-start-radius: calc(var(--radius-L) * 0.7);
+    border-start-end-radius: calc(var(--radius-L) * 0.7);
 }
 
 .resultsList__cardHeading {
@@ -584,6 +660,20 @@ header {
     border-start-end-radius: var(--radius-L);
 }
 
+/* Animation on activity img */
+.activityItem__cardImg {
+    transition: transform 500ms;
+}
+
+.activityItem__cardImg__container:hover .activityItem__cardImg {
+    transform: scale(1.2);
+}
+
+.activityItem__cardImg__container {
+    overflow: hidden;
+}
+
+/* End animation on activity img */
 .activityItem__cardHeading {
     grid-area: heading;
     font-size: var(--font-normal);
@@ -667,10 +757,10 @@ footer .footer__widthWrapper {
 
 /* -****** media between 800px and 1099.8px ******- */
 @media(min-width: 50rem) and (max-width: 68.74rem) {
-    
+
     /* ================ */
     /* ===== MAIN ===== */
-    
+
     /* --- Most popular section --- */
 
     .popularList__cards {
@@ -685,7 +775,7 @@ footer .footer__widthWrapper {
 
 /* -****** 900px and above ******- */
 @media(min-width: 56.25rem) {
-    
+
     /* ================ */
     /* ==== FOOTER ==== */
 
@@ -694,7 +784,6 @@ footer .footer__widthWrapper {
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
 
 /* =================================================================================== */
 /* ====================== */
@@ -751,6 +840,11 @@ footer .footer__widthWrapper {
 
     .mainNavbar__list_item a {
         padding-inline: var(--space-S);
+    }
+
+    .mainNavbar__list_item a:hover {
+        color: var(--primary);
+        text-decoration: underline wavy var(--primary);
     }
 
     .mainNavbar__list_item a.active {
@@ -854,7 +948,7 @@ footer .footer__widthWrapper {
         gap: var(--space-S);
     }
 
-    /* --- Popular list section --- */
+    /* --- Most popular section --- */
 
     h3.popularList__cardHeading {
         font-size: var(--font-small);
