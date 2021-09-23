@@ -462,6 +462,8 @@ header {
 .popularList__cardWrapper__container:hover .popularList__cardWrapper {
     background: var(--primary-icon-lighter);
     border-color: var(--primary-icon);
+    border-inline-color: var(--primary-icon-lighter);
+    border-block-style: dotted;
 }
 
 .popularList__cardWrapper__container {
@@ -518,7 +520,7 @@ header {
 
 /* Animation on results list cards */
 .resultsList__cardWrapper {
-    transition: background-color 350ms, border-color 350ms;
+    transition: background-color 350ms;
 }
 
 .resultsList__cardWrapper__container {
@@ -529,6 +531,8 @@ header {
 .resultsList__cardWrapper__container:hover .resultsList__cardWrapper {
     background-color: var(--primary-icon-lighter);
     border-color: var(--primary-icon);
+    border-block-color: var(--primary-icon-lighter);
+    border-inline-style: dotted;
 }
 
 .resultsList__cardImg {
