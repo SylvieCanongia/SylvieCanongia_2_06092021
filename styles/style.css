@@ -456,7 +456,7 @@ header {
 
 /* Animation on popular list cards */
 .popularList__cardWrapper {
-    transition: background-color 350ms, border-color 350ms;
+    transition: background-color 350ms;
 }
 
 .popularList__cardWrapper__container:hover .popularList__cardWrapper {
