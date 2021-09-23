@@ -586,6 +586,10 @@ header {
     background-color: var(--white);
     border: 5px solid var(--white);
     border-radius: var(--radius-L);
+}
+
+/* box shadow applied to the container of the cards to overflow the card border */
+.resultsList__cardWrapper__container {
     box-shadow: 1px 1px 10px 2px var(--grey-light-border);
 }
 
