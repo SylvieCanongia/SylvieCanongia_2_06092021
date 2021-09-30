@@ -61,7 +61,7 @@
     --size-M: 32px;
     --size-L: 40px;
     --size-XL: 48px;
-
+    --size-XXL: 80px;
 
     /* ====== RADIUS ====== */
 
@@ -144,56 +144,91 @@ img {
 
 header {
     font-size: var(--font-small);
-    margin-block-end: var(--space-M);
 }
 
-.header__mainHeader {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    margin-inline: var(--space-S);
-    padding-block: var(--space-S);
+.header__wrapper {
+    padding-inline: var(--widthWrapper);
+    padding-block-end: var(--space-S);
 }
 
-.mainHeader__logo {
-    display: grid;
-    place-items: center;
-}
-
-.mainheader__mainNavbar__wrapper {
-    display: none;
-}
-
-.mainHeader__signUp {
-    display: grid;
-    place-items: center;
-    font-weight: var(--font-weight-bold);
-}
-
-.mainHeader__signUp_link {
-    color: var(--primary);
-    text-decoration: none;
+.header__navbar {
+    width: 100%;
 }
 
 .navbar__list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-items: stretch;
+    grid-template-rows: 90px 30px;
 }
 
-.navbar__list_item a {
+.navbar__list__item .active {
+    color: var(--primary);
+}
+
+.navbar__list__item.logo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    display: grid;
+    align-items: center;
+}
+
+.navbar__list__item .logoLink {
+    display: inline-block;
+    width: 80px;
+}
+
+.navbar__list__item .logoImg {
+    width: 100%;
+}
+
+.navbar__list__item.signUp {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    justify-self: end;
+
+    display: grid;
+    align-items: center;
+}
+
+.navbar__list__item.accommodations {
+    grid-column: 1 / 2;
+    grid-row: 2/ 3;
+}
+
+.navbar__list__item.activities {
+    grid-column: 2 / 3;
+    grid-row: 2/ 3;
+}
+
+.navbar__list__item.accommodations,
+.navbar__list__item.activities {
+    text-align: center;
+}
+
+.navbar__list__item.signUp {
+    font-weight: var(--font-weight-bold);
+}
+
+.navbar__list__item .signUpLink {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.navbar__list__item a {
     color: black;
     text-decoration: none;
-    text-align: center;
-    padding-block-end: calc(var(--space-base) * 1.2);
-    display: inline-block;
-    width: 100%;
-    border-bottom: 2px solid var(--grey-background);
 }
 
-.navbar__list_item a.active {
+.navbar__list__item.accommodations {
+    margin-inline-start: calc(var(--widthWrapper) * -1);
     color: var(--primary);
     border-bottom: 2px solid var(--primary);
+}
+
+.navbar__list__item.activities {
+    margin-inline-end: calc(var(--widthWrapper) * -1);
+    border-bottom: 2px solid var(--grey-background);
 }
 
 /* ================================== */
@@ -815,85 +850,58 @@ footer .footer__widthWrapper {
 /* -****** media 1100px and above ******- */
 @media(min-width: 68.75rem) {
 
-    /* ================ */
-    /* ==== HEADER ==== */
-
-    /* make the mobile and tablet navbar disappear */
-    .header__navbar,
-    .mainHeader__signUp {
-        display: none;
-    }
-
-    /* make desktop navbar visible */
-    .mainheader__mainNavbar__wrapper {
-        justify-self: end;
-        align-self: end;
-
-        display: grid;
-        place-items: center;
-    }
-
-    .mainHeader__logo {
-        justify-self: start;
-    }
-
-    /* To align logo with navbar vertically */
-    .mainHeader__logo_image {
-        margin-block-end: -24px;
-    }
-
-    .header__mainHeader {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding-block: 0;
-        /* increase the margin of the header wrapper */
-        margin-inline: var(--space-M);
-    }
-
-    .mainNavbar__list {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .mainNavbar__list_item a {
-        display: inline-block;
-        padding-block-start: var(--space-L);
-    }
-
-    .mainNavbar__list_item a {
-        padding-inline: var(--space-S);
-    }
-
-    /* 2 classes for a higher specificity and overwrite the general rule */
-    .mainNavbar__list .mainNavbar__list_item a:hover {
-        color: var(--primary);
-        text-decoration: underline wavy var(--primary);
-    }
-
-    .mainNavbar__list_item a.active {
-        border-top: 2px solid var(--primary);
-        /* 2px less for the thickness of the blue border */
-        padding-block-start: calc(var(--space-L) - 2px);
-        color: var(--primary);
-    }
-
-    /* third item of the navbar for signing up */
-    .mainNavbar__list_item.signUp {
-        font-weight: var(--font-weight-bold);
-    }
-
-    .mainNavbar__list_item .signUpLink {
-        color: var(--primary);
-        padding-inline-end: 0;
-    }
-
-    /* ========================== */
-    /* ========== MAIN ========== */
-
+    header,
     main,
     footer {
         --widthWrapper: var(--space-L);
     }
+
+    /* ================ */
+    /* ==== HEADER ==== */
+
+    .navbar__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: var(--size-XXL);
+    }
+
+    .navbar__list__item:not(.logo) {
+        padding-inline: var(--space-XS);
+        display: grid;
+        place-items: center;
+        height: 100%;
+    }
+
+    .navbar__list__item.accommodations,
+    .navbar__list__item.activities {
+        margin-inline: revert;
+        border-bottom: none;
+    }
+
+    .navbar__list__item.logo {
+        flex-basis: 60vw;
+    }
+
+    .navbar__list__item.accommodations {
+        border-top: 2px solid var(--primary);
+    }
+
+    .navbar__list .navbar__list__item a:hover {
+        color: var(--primary);
+        text-decoration: underline wavy var(--primary);
+    }
+
+    .navbar__list__item.signUp {
+        font-weight: var(--font-weight-bold);
+    }
+
+    .navbar__list__item .signUpLink {
+        color: var(--primary);
+    }
+
+    /* ========================== */
+    /* ========== MAIN ========== */
 
     /* ========== SEARCH GRID ========== */
 
