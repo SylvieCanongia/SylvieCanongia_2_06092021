@@ -675,6 +675,10 @@ header {
     margin-block-start: var(--space-L);
 }
 
+.displayMore a:hover {
+    color: var(--primary);
+}
+
 /* =========== ACTIVITIES GRID =========== */
 
 .activitiesSection {
