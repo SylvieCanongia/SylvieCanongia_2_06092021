@@ -769,15 +769,42 @@ footer .footer__widthWrapper {
 /* ================================================================================== */
 /* -****** styles for mobile under 370px ******- */
 @media (max-width: 23.12rem) {
+    h2 {
+        font-size: var(--font-medium);
+    }
 
     /* ====================== */
     /* ======== MAIN ======== */
+
+    /* --- Search section --- */
+
+    .searchBar input {
+        font-size: revert;
+    }
 
     /* ==== RESULTS GRID ==== */
 
     /* --- Most popular section --- */
     .popularList__cardHeading {
-        font-size: var(--font-small);
+        font-size: calc(var(--font-small) * 0.8);
+    }
+
+    .popularList__cardHeading,
+    .popularList__cardPrice,
+    .popularList__cardRating {
+        padding-inline: var(--space-XS);
+    }
+
+    .popularList__cardPrice {
+        font-size: calc(var(--font-small) * 0.8);
+    }
+
+    .popularList__cardRating {
+        font-size: calc(var(--font-normal) * 0.55);
+    }
+
+    .popularList__cardWrapper {
+        grid-template-rows: 55px 30px 1fr;
     }
 }
 
