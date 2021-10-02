@@ -106,11 +106,6 @@ a {
     text-decoration: none;
 }
 
-li a:hover:not(.activityItem__link) {
-    color: var(--primary);
-    text-decoration: underline var(--primary);
-}
-
 .page-wrapper {
     position: relative;
     max-width: var(--maxWidth);
@@ -161,10 +156,6 @@ header {
     grid-template-rows: 90px 30px;
 }
 
-.navbar__list__item .active {
-    color: var(--primary);
-}
-
 .navbar__list__item.logo {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
@@ -204,6 +195,7 @@ header {
 .navbar__list__item.accommodations,
 .navbar__list__item.activities {
     text-align: center;
+    border-bottom: 2px solid var(--grey-background);
 }
 
 .navbar__list__item.signUp {
@@ -220,20 +212,32 @@ header {
     text-decoration: none;
 }
 
+.navbar__list__item a:not(.logoLink, .signUpLink) {
+    display: inline-block;
+    width: 100%;
+    /* the 2px are for the thickness of the underline to trigger the text + underline hover effect at the same time */
+    height: calc(100% + 2px);
+}
+
+.navbar__list__item a:hover {
+    color: var(--primary);
+}
+
+.navbar__list__item:not(.signUp, .logo):hover {
+    border-bottom: 2px solid var(--primary);
+    color: var(--primary);
+}
+
 .navbar__list__item.accommodations {
     margin-inline-start: calc(var(--widthWrapper) * -1);
-    color: var(--primary);
-    border-bottom: 2px solid var(--primary);
 }
 
 .navbar__list__item.activities {
     margin-inline-end: calc(var(--widthWrapper) * -1);
-    border-bottom: 2px solid var(--grey-background);
 }
 
 /* ================================== */
 /* ============== MAIN ============== */
-
 
 /* ========= SEARCH GRID ========= */
 
@@ -899,9 +903,20 @@ footer .footer__widthWrapper {
 
     .navbar__list__item:not(.logo) {
         padding-inline: var(--space-XS);
-        display: grid;
-        place-items: center;
+        /* to remove the display grid on the signUp item */
+        display: revert;
         height: 100%;
+    }
+
+    .navbar__list__item a.signUpLink {
+        width: 100%;
+        /* the 2px are to be on the same horizontal line than the 2 other nav items */
+        height: calc(100% + 2px);
+    }
+
+    .navbar__list__item a:not(.logoLink) {
+        display: grid;
+        align-items: center;
     }
 
     .navbar__list__item.accommodations,
@@ -911,16 +926,16 @@ footer .footer__widthWrapper {
     }
 
     .navbar__list__item.logo {
-        flex-basis: 60vw;
+        flex-basis: 62vw;
     }
 
-    .navbar__list__item.accommodations {
-        border-top: 2px solid var(--primary);
+    .navbar__list__item {
+        border-block-start: 2px solid transparent;
     }
 
-    .navbar__list .navbar__list__item a:hover {
-        color: var(--primary);
-        text-decoration: underline wavy var(--primary);
+    .navbar__list__item:not(.signUp, .logo):hover {
+        border-block-end: revert;
+        border-block-start: 2px solid var(--primary);
     }
 
     .navbar__list__item.signUp {
@@ -1128,6 +1143,13 @@ footer .footer__widthWrapper {
 /* -****** 1250 px and above ******- */
 @media (min-width: 78.125rem) {
 
+    /* ================================ */
+    /* ============ HEADER ============ */
+
+    .navbar__list__item.logo {
+        flex-basis: 65vw;
+    }
+
     /* ============ RESULTS GRID ============ */
 
     .mainResultsGrid__wrapper {
@@ -1163,6 +1185,14 @@ footer .footer__widthWrapper {
 /* -****** 1350px and above ******- */
 @media (min-width: 84.375rem) {
 
+    /* ================================ */
+    /* ============ HEADER ============ */
+
+
+    .navbar__list__item.logo {
+        flex-basis: 65vw;
+    }
+
     /* ============ RESULTS GRID ============ */
 
     .mainResultsGrid__wrapper {
@@ -1175,5 +1205,18 @@ footer .footer__widthWrapper {
 
     .popularList__cardPrice {
         font-size: var(--font-small);
+    }
+}
+
+/* =========================================================================================== */
+
+/* -****** 1500px and above ******- */
+@media (min-width: 93.75rem) {
+
+    /* ================================ */
+    /* ============ HEADER ============ */
+
+    .navbar__list__item.logo {
+        flex-basis: 63vw;
     }
 }
