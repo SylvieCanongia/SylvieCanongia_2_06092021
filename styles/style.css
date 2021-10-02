@@ -410,7 +410,7 @@ header {
 
 /* --- Nb results section--- */
 
-.mainSearchGrid_nbResults {
+.mainSearchGrid__nbResults {
     grid-area: nb-results;
 
     display: flex;
@@ -419,7 +419,7 @@ header {
     margin-block-end: var(--space-M);
 }
 
-.mainSearchGrid_nbResults .info__icon {
+.mainSearchGrid__nbResults .info__icon {
     border: 1px solid var(--grey-light-border);
     border-radius: var(--radius-cercle);
     width: var(--size-S);
@@ -430,7 +430,7 @@ header {
     color: var(--primary);
 }
 
-.mainSearchGrid_nbResults .nb__results {
+.mainSearchGrid__nbResults .nb__results {
     font-size: var(--font-small);
 }
 
@@ -750,6 +750,8 @@ footer {
 }
 
 footer .footer__widthWrapper {
+    max-width: var(--maxWidth);
+    margin-inline: auto;
     padding-inline: var(--widthWrapper);
     display: flex;
     flex-direction: column;
