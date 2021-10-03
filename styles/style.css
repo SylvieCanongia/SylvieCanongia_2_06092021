@@ -731,6 +731,8 @@ header {
 
 .activityItem__cardImg__container {
     overflow: hidden;
+    border-start-start-radius: var(--radius-L);
+    border-start-end-radius: var(--radius-L);
 }
 
 /* End animation on activity img */
