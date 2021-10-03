@@ -302,7 +302,6 @@ header {
 
 .searchBar_button:hover {
     background-color: var(--primary-darker);
-    border: 1px solid var(--black-semi-transparent);
     box-shadow: 1px 1px 2px var(--white-transparent-dark);
     color: var(--white-transparent-light);
     text-shadow: -1px -1px 0 var(--white-transparent-dark);
